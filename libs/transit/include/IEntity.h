@@ -39,6 +39,21 @@ class IEntity {
   virtual void Rotate(double angle) {}
   virtual void Jump(double height) {}
 
+  /**
+   * Check if entity is a creeper
+   * 
+   * @return true if entity is a creeper, false otherwise
+   */
+  virtual bool IsCreeper() { return false; }
+
+  /**
+   * Check if entity is a drone
+   * 
+   * @return true if entity is a drone, false otherwise
+   */
+  virtual bool IsDrone() { return false; }
+
+
  protected:
   int id;
   const IGraph* graph;

@@ -18,3 +18,6 @@ build:
 clean:
 	cd apps/transit_service; make clean
 	rm -rf build
+run:
+	make -j
+	./build/bin/transit_service 8081 apps/transit_service/web/
