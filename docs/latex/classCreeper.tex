@@ -1,0 +1,268 @@
+\hypertarget{classCreeper}{}\doxysection{Creeper Class Reference}
+\label{classCreeper}\index{Creeper@{Creeper}}
+
+
+This class implements \mbox{\hyperlink{classIEntity}{I\+Entity}} and is responsible for handling the \mbox{\hyperlink{classCreeper}{Creeper}}\+: an entity that continually seeks to hover over the drone, following around the drone from above, using the beeline algorithm.  
+
+
+
+
+{\ttfamily \#include $<$Creeper.\+h$>$}
+
+
+
+Inheritance diagram for Creeper\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=135pt]{classCreeper__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Creeper\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=135pt]{classCreeper__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCreeper_a661700147a6a795cf7ca36c2f4726b12}{Creeper}} (Json\+Object \&obj)
+\item 
+\mbox{\hyperlink{classCreeper_acaba9a064c8e9c72f0d62d13bfebb051}{$\sim$\+Creeper}} () override=default
+\item 
+\mbox{\hyperlink{classVector3}{Vector3}} \mbox{\hyperlink{classCreeper_a0a8ca0b2534a72e0809949a39bd17c4b}{Get\+Position}} () const
+\item 
+\mbox{\hyperlink{classVector3}{Vector3}} \mbox{\hyperlink{classCreeper_abab24193f5a71bccba3a17e0ddd695ab}{Get\+Direction}} () const
+\item 
+\mbox{\hyperlink{classVector3}{Vector3}} \mbox{\hyperlink{classCreeper_ac5cdc07840e27d668f105a42dfe904ee}{Get\+Destination}} () const
+\item 
+Json\+Object \mbox{\hyperlink{classCreeper_af8d628ddaec9c94da4d8740509d26655}{Get\+Details}} () const override
+\item 
+float \mbox{\hyperlink{classCreeper_ac51dcf4b59df129fc9ec57c2549d255b}{Get\+Speed}} () const
+\item 
+void \mbox{\hyperlink{classCreeper_ac6037c3f55be34bf0159340f4e0c8a67}{Set\+Position}} (\mbox{\hyperlink{classVector3}{Vector3}} pos\+\_\+)
+\item 
+void \mbox{\hyperlink{classCreeper_a9398f514359088baf262446b82c157f8}{Set\+Direction}} (\mbox{\hyperlink{classVector3}{Vector3}} dir\+\_\+)
+\item 
+void \mbox{\hyperlink{classCreeper_aec5c67e33b0cb6da38d410270d43412a}{Set\+Destination}} (\mbox{\hyperlink{classVector3}{Vector3}} des\+\_\+)
+\item 
+void \mbox{\hyperlink{classCreeper_a4106c7b2a3757b9e409ce2ec2f9fe446}{Find\+Drone}} (std\+::vector$<$ \mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ $>$ entites)
+\item 
+void \mbox{\hyperlink{classCreeper_a89cbc4c60c04f132f84073c33d7f97fa}{Update}} (double dt, std\+::vector$<$ \mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ $>$ entities)
+\item 
+bool \mbox{\hyperlink{classCreeper_af737f9e8b1f367ad5d8a84028753109d}{Is\+Creeper}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+This class implements \mbox{\hyperlink{classIEntity}{I\+Entity}} and is responsible for handling the \mbox{\hyperlink{classCreeper}{Creeper}}\+: an entity that continually seeks to hover over the drone, following around the drone from above, using the beeline algorithm. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCreeper_a661700147a6a795cf7ca36c2f4726b12}\label{classCreeper_a661700147a6a795cf7ca36c2f4726b12}} 
+\index{Creeper@{Creeper}!Creeper@{Creeper}}
+\index{Creeper@{Creeper}!Creeper@{Creeper}}
+\doxysubsubsection{\texorpdfstring{Creeper()}{Creeper()}}
+{\footnotesize\ttfamily Creeper\+::\+Creeper (\begin{DoxyParamCaption}\item[{Json\+Object \&}]{obj }\end{DoxyParamCaption})}
+
+Constructor, creates \mbox{\hyperlink{classCreeper}{Creeper}} object
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & Json Object containing configuration details for \mbox{\hyperlink{classCreeper}{Creeper}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCreeper_acaba9a064c8e9c72f0d62d13bfebb051}\label{classCreeper_acaba9a064c8e9c72f0d62d13bfebb051}} 
+\index{Creeper@{Creeper}!````~Creeper@{$\sim$Creeper}}
+\index{````~Creeper@{$\sim$Creeper}!Creeper@{Creeper}}
+\doxysubsubsection{\texorpdfstring{$\sim$Creeper()}{~Creeper()}}
+{\footnotesize\ttfamily Creeper\+::$\sim$\+Creeper (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+Destructor 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCreeper_a4106c7b2a3757b9e409ce2ec2f9fe446}\label{classCreeper_a4106c7b2a3757b9e409ce2ec2f9fe446}} 
+\index{Creeper@{Creeper}!FindDrone@{FindDrone}}
+\index{FindDrone@{FindDrone}!Creeper@{Creeper}}
+\doxysubsubsection{\texorpdfstring{FindDrone()}{FindDrone()}}
+{\footnotesize\ttfamily void Creeper\+::\+Find\+Drone (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ $>$}]{entites }\end{DoxyParamCaption})}
+
+Finds the drone object, given a list of entity objects
+
+
+\begin{DoxyParams}{Parameters}
+{\em entites} & list of entity objects \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCreeper_ac5cdc07840e27d668f105a42dfe904ee}\label{classCreeper_ac5cdc07840e27d668f105a42dfe904ee}} 
+\index{Creeper@{Creeper}!GetDestination@{GetDestination}}
+\index{GetDestination@{GetDestination}!Creeper@{Creeper}}
+\doxysubsubsection{\texorpdfstring{GetDestination()}{GetDestination()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector3}{Vector3}} Creeper\+::\+Get\+Destination (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Getter for creeper destination
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classVector3}{Vector3}} representing creeper destination 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity}{I\+Entity}}.
+
+\mbox{\Hypertarget{classCreeper_af8d628ddaec9c94da4d8740509d26655}\label{classCreeper_af8d628ddaec9c94da4d8740509d26655}} 
+\index{Creeper@{Creeper}!GetDetails@{GetDetails}}
+\index{GetDetails@{GetDetails}!Creeper@{Creeper}}
+\doxysubsubsection{\texorpdfstring{GetDetails()}{GetDetails()}}
+{\footnotesize\ttfamily Json\+Object Creeper\+::\+Get\+Details (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Getter for creeper details Json object
+
+\begin{DoxyReturn}{Returns}
+Json\+Object representing creeper details 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity}{I\+Entity}}.
+
+\mbox{\Hypertarget{classCreeper_abab24193f5a71bccba3a17e0ddd695ab}\label{classCreeper_abab24193f5a71bccba3a17e0ddd695ab}} 
+\index{Creeper@{Creeper}!GetDirection@{GetDirection}}
+\index{GetDirection@{GetDirection}!Creeper@{Creeper}}
+\doxysubsubsection{\texorpdfstring{GetDirection()}{GetDirection()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector3}{Vector3}} Creeper\+::\+Get\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Getter for creeper direction
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classVector3}{Vector3}} representing creeper direction 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity}{I\+Entity}}.
+
+\mbox{\Hypertarget{classCreeper_a0a8ca0b2534a72e0809949a39bd17c4b}\label{classCreeper_a0a8ca0b2534a72e0809949a39bd17c4b}} 
+\index{Creeper@{Creeper}!GetPosition@{GetPosition}}
+\index{GetPosition@{GetPosition}!Creeper@{Creeper}}
+\doxysubsubsection{\texorpdfstring{GetPosition()}{GetPosition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector3}{Vector3}} Creeper\+::\+Get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Getter for creeper position
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classVector3}{Vector3}} representing creeper position 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity}{I\+Entity}}.
+
+\mbox{\Hypertarget{classCreeper_ac51dcf4b59df129fc9ec57c2549d255b}\label{classCreeper_ac51dcf4b59df129fc9ec57c2549d255b}} 
+\index{Creeper@{Creeper}!GetSpeed@{GetSpeed}}
+\index{GetSpeed@{GetSpeed}!Creeper@{Creeper}}
+\doxysubsubsection{\texorpdfstring{GetSpeed()}{GetSpeed()}}
+{\footnotesize\ttfamily float Creeper\+::\+Get\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Getter for creeper speed
+
+\begin{DoxyReturn}{Returns}
+float representing creeper speed 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity}{I\+Entity}}.
+
+\mbox{\Hypertarget{classCreeper_af737f9e8b1f367ad5d8a84028753109d}\label{classCreeper_af737f9e8b1f367ad5d8a84028753109d}} 
+\index{Creeper@{Creeper}!IsCreeper@{IsCreeper}}
+\index{IsCreeper@{IsCreeper}!Creeper@{Creeper}}
+\doxysubsubsection{\texorpdfstring{IsCreeper()}{IsCreeper()}}
+{\footnotesize\ttfamily bool Creeper\+::\+Is\+Creeper (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Check if entity is creeper, returns true in this case
+
+\begin{DoxyReturn}{Returns}
+true, since the object is a creeper 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_ae04f406219a4a882b035cfa25d04e698}{I\+Entity}}.
+
+\mbox{\Hypertarget{classCreeper_aec5c67e33b0cb6da38d410270d43412a}\label{classCreeper_aec5c67e33b0cb6da38d410270d43412a}} 
+\index{Creeper@{Creeper}!SetDestination@{SetDestination}}
+\index{SetDestination@{SetDestination}!Creeper@{Creeper}}
+\doxysubsubsection{\texorpdfstring{SetDestination()}{SetDestination()}}
+{\footnotesize\ttfamily void Creeper\+::\+Set\+Destination (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVector3}{Vector3}}}]{des\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Setter for creeper destination
+
+
+\begin{DoxyParams}{Parameters}
+{\em des\+\_\+\+\_\+} & vector3 representing new destination \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity}{I\+Entity}}.
+
+\mbox{\Hypertarget{classCreeper_a9398f514359088baf262446b82c157f8}\label{classCreeper_a9398f514359088baf262446b82c157f8}} 
+\index{Creeper@{Creeper}!SetDirection@{SetDirection}}
+\index{SetDirection@{SetDirection}!Creeper@{Creeper}}
+\doxysubsubsection{\texorpdfstring{SetDirection()}{SetDirection()}}
+{\footnotesize\ttfamily void Creeper\+::\+Set\+Direction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVector3}{Vector3}}}]{dir\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Setter for creeper direction
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir\+\_\+\+\_\+} & vector3 representing new direction \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity}{I\+Entity}}.
+
+\mbox{\Hypertarget{classCreeper_ac6037c3f55be34bf0159340f4e0c8a67}\label{classCreeper_ac6037c3f55be34bf0159340f4e0c8a67}} 
+\index{Creeper@{Creeper}!SetPosition@{SetPosition}}
+\index{SetPosition@{SetPosition}!Creeper@{Creeper}}
+\doxysubsubsection{\texorpdfstring{SetPosition()}{SetPosition()}}
+{\footnotesize\ttfamily void Creeper\+::\+Set\+Position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVector3}{Vector3}}}]{pos\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Setter for creeper position
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos\+\_\+\+\_\+} & vector3 representing new position \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity}{I\+Entity}}.
+
+\mbox{\Hypertarget{classCreeper_a89cbc4c60c04f132f84073c33d7f97fa}\label{classCreeper_a89cbc4c60c04f132f84073c33d7f97fa}} 
+\index{Creeper@{Creeper}!Update@{Update}}
+\index{Update@{Update}!Creeper@{Creeper}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Creeper\+::\+Update (\begin{DoxyParamCaption}\item[{double}]{dt,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ $>$}]{entities }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Updates creeper object such that it beelines toward the drone\textquotesingle{}s position
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & time differential of update \\
+\hline
+{\em entites} & list of entity objects \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity}{I\+Entity}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/balas095/csci-\/3081w-\/f22/lab10/\+Team-\/001-\/4-\/lab10/libs/transit/include/Creeper.\+h\item 
+/home/balas095/csci-\/3081w-\/f22/lab10/\+Team-\/001-\/4-\/lab10/libs/transit/src/Creeper.\+cc\end{DoxyCompactItemize}

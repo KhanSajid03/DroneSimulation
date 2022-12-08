@@ -1,12 +1,18 @@
 #include "SimulationModel.h"
 #include "DroneFactory.h"
 #include "RobotFactory.h"
+#include "CreeperFactory.h"
+#include "HelicopterFactory.h"
+#include  "CarFactory.h"
 
 SimulationModel::SimulationModel(IController& controller)
     : controller(controller) {
   compFactory = new CompositeFactory();
   AddFactory(new DroneFactory());
   AddFactory(new RobotFactory());
+  AddFactory(new CreeperFactory());
+  AddFactory(new HelicopterFactory());
+  AddFactory(new CarFactory());
 }
 
 void SimulationModel::CreateEntity(JsonObject& entity) {
@@ -48,7 +54,11 @@ void SimulationModel::ScheduleTrip(JsonObject& details) {
 /// Updates the simulation
 void SimulationModel::Update(double dt) {
   for (int i = 0; i < entities.size(); i++) {
-    entities[i]->Update(dt, scheduler);
+    if (entities[i]->IsCreeper()) {
+      entities[i]->Update(dt, entities);
+    } else {
+      entities[i]->Update(dt, scheduler);
+    }
     controller.UpdateEntity(*entities[i]);
   }
 }
