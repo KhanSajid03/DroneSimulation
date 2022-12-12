@@ -1,6 +1,9 @@
 #define _USE_MATH_DEFINES
 #include "RechargeStation.h"
 #include "BeelineStrategy.h"
+#include "DfsStrategy.h"
+#include "AstarStrategy.h"
+#include "DijkstraStrategy.h"
 #include "SpinDecorator.h"
 #include "JumpDecorator.h"
 
@@ -10,9 +13,6 @@
 RechargeStation::RechargeStation(JsonObject& obj) : details(obj) {
   JsonArray pos(obj["position"]);
   position = {pos[0], pos[1], pos[2]};
-
-  JsonArray des(obj["destination"]);
-  destination = {des[0], des[1], des[2]};
 
   JsonArray dir(obj["direction"]);
   direction = {dir[0], dir[1], dir[2]};
@@ -26,14 +26,65 @@ RechargeStation::~RechargeStation() {
   // Delete dynamically allocated variables
 }
 
-void RechargeStation::Update(double dt, std::vector<IEntity*> scheduler) {
-  toTargetPosStrategy = new BeelineStrategy(this->GetPosition(), destination);
-  if (!toTargetPosStrategy->IsCompleted()) {
-    toTargetPosStrategy->Move(this, dt);
-  } else {
-    destination = {rand() % 2900 - 1400, 500, rand() % 1600 - 800};
-    toTargetPosStrategy->Move(this, dt);
+void RechargeStation::GetNearestEntity(std::vector<IEntity*> scheduler) {
+  float minDis = std::numeric_limits<float>::max();
+  for (auto entity : scheduler) {
+    if (entity->GetAvailability()) {
+      float disToEntity = this->position.Distance(entity->GetPosition());
+      if (disToEntity <= minDis) {
+        minDis = disToEntity;
+        nearestEntity = entity;
+      }
+    }
   }
+
+  if(nearestEntity){
+    nearestEntity->SetAvailability(false);  // set availability to the nearest entity
+    available = false;
+    pickedUp = false;
+
+    destination = nearestEntity->GetPosition();
+
+    toTargetPosStrategy = new BeelineStrategy(this->GetPosition(), destination);
+    std::string targetStrategyName = nearestEntity->GetStrategyName();
+    if(targetStrategyName.compare("astar") == 0){
+        toTargetDestStrategy = new AstarStrategy(nearestEntity->GetPosition(), nearestEntity->GetDestination(), graph);
+        toTargetDestStrategy = new SpinDecorator(toTargetDestStrategy);
+    } else if (targetStrategyName.compare("dfs") == 0){
+        toTargetDestStrategy = new DfsStrategy(nearestEntity->GetPosition(), nearestEntity->GetDestination(), graph);
+        toTargetDestStrategy = new JumpDecorator(toTargetDestStrategy);
+    } else if (targetStrategyName.compare("dijkstra") == 0){
+        toTargetDestStrategy = new DijkstraStrategy(nearestEntity->GetPosition(), nearestEntity->GetDestination(), graph);
+        toTargetDestStrategy = new SpinDecorator(toTargetDestStrategy);
+        toTargetDestStrategy = new JumpDecorator(toTargetDestStrategy);
+    } 
+  }
+}
+
+void RechargeStation::Update(double dt, std::vector<IEntity*> scheduler) {
+  if (available) {
+    GetNearestEntity(scheduler);
+  }
+
+  if(toTargetPosStrategy){
+    toTargetPosStrategy->Move(this, dt);
+    if(toTargetPosStrategy->IsCompleted()){
+      delete toTargetPosStrategy;
+      toTargetPosStrategy = NULL;
+    }
+  } else if (toTargetDestStrategy) {
+    toTargetDestStrategy->Move(this, dt);
+    
+    // Moving the robot
+    nearestEntity->SetPosition(this->GetPosition());
+    nearestEntity->SetDirection(this->GetDirection());
+    if(toTargetDestStrategy->IsCompleted()){
+        delete toTargetDestStrategy;
+        toTargetDestStrategy = NULL;
+        available = true;
+        nearestEntity = NULL;
+    }
+  }  
 }
 
 void RechargeStation::Rotate(double angle) {
@@ -42,19 +93,52 @@ void RechargeStation::Rotate(double angle) {
   direction.z = dirTmp.x * std::sin(angle) + dirTmp.z * std::cos(angle);
 }
 
-// RechargeStation can't jump, so commenting this out.
-// void Drone::Jump(double height) {
-//   if(goUp){
-//     position.y += height;
-//     jumpHeight += height;
-//     if(jumpHeight > 5){
-//       goUp = false;
-//     }
-//   } else {
-//     position.y -= height;
-//     jumpHeight -= height;
-//     if(jumpHeight < 0){
-//       goUp = true;
-//     }
-//   }
+void RechargeStation::Jump(double height) {
+  if(goUp){
+    position.y += height;
+    jumpHeight += height;
+    if(jumpHeight > 5){
+      goUp = false;
+    }
+  } else {
+    position.y -= height;
+    jumpHeight -= height;
+    if(jumpHeight < 0){
+      goUp = true;
+    }
+  }
+}
+
+
+
+
+
+// #define _USE_MATH_DEFINES
+// #include "RechargeStation.h"
+// #include "BeelineStrategy.h"
+// #include "SpinDecorator.h"
+// #include "JumpDecorator.h"
+
+// #include <cmath>
+// #include <limits>
+
+// RechargeStation::RechargeStation(JsonObject& obj) : details(obj) {
+//   JsonArray pos(obj["position"]);
+//   position = {pos[0], pos[1], pos[2]};
+
+//   JsonArray des(obj["destination"]);
+//   destination = {des[0], des[1], des[2]};
+
+//   JsonArray dir(obj["direction"]);
+//   direction = {dir[0], dir[1], dir[2]};
+
+//   speed = obj["speed"];
+
+//   available = true;
 // }
+
+// RechargeStation::~RechargeStation() {
+//   // Delete dynamically allocated variables
+// }
+
+
