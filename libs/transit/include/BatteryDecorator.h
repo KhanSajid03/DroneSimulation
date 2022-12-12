@@ -9,7 +9,7 @@
 class BatteryDecorator : public IEntity {
  public:
   BatteryDecorator(IEntity *entity) {}
-  void Update(IEntity *entity, double dt);
+  void Update(double dt);
   void CalculateBatteryLevel(float BatteryLevel); // calculating the battery level based on the distance required to complete the trip
 
  protected:
