@@ -26,15 +26,15 @@ RechargeStation::~RechargeStation() {
   // Delete dynamically allocated variables
 }
 
-// void RechargeStation::Update(double dt, std::vector<IEntity*> scheduler) {
-//   toTargetPosStrategy = new BeelineStrategy(this->GetPosition(), destination);
-//   if (!toTargetPosStrategy->IsCompleted()) {
-//     toTargetPosStrategy->Move(this, dt);
-//   } else {
-//     destination = {rand() % 2900 - 1400, 500, rand() % 1600 - 800};
-//     toTargetPosStrategy->Move(this, dt);
-//   }
-// }
+void RechargeStation::Update(double dt, std::vector<IEntity*> scheduler) {
+  toTargetPosStrategy = new BeelineStrategy(this->GetPosition(), destination);
+  if (!toTargetPosStrategy->IsCompleted()) {
+    toTargetPosStrategy->Move(this, dt);
+  } else {
+    destination = {rand() % 2900 - 1400, 500, rand() % 1600 - 800};
+    toTargetPosStrategy->Move(this, dt);
+  }
+}
 
 void RechargeStation::Rotate(double angle) {
   Vector3 dirTmp = direction;
