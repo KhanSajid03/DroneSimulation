@@ -1,22 +1,15 @@
-#ifndef BATTERY_DECORATOR_H_
-#define BATTERY_DECORATOR_H_
+
 #include "BatteryDecorator.h"
 
-#include <vector>
-
-#include "IEntity.h"
-
-class BatteryDecorator : public IEntity {
- public:
-  BatteryDecorator(IEntity *entity) {
-    BatteryLevel = 100.0;
+void Update(IEntity *entity, float dt) {
+  float minDis = std::numeric_limits<float>::max();
+  if (entity->GetAvailability()) {
+    float disToEntity = this->GetPosition().Distance(entity->GetPosition()); // calculating the distance from current entity to robot
+    
   }
 
-void Update(IEntity *entity, double dt) {}
-void CalculateBatteryLevel() {}
+}
+void CalculateBatteryLevel(float BatteryLevel) {
 
- protected:
-  float BatteryLevel;
-};
 
-#endif  // Battery_DECORATOR_H_
+}
