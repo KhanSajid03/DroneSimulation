@@ -62,10 +62,10 @@
         }
     },
     {
-        "command": "CreateBattery",
+        "command": "CreateRechargeStation",
         "params": {
-            "type": "battery",
-            "name": "Battery",
+            "type": "rechargestation",
+            "name": "RechargeStation",
             "mesh": "assets/model/battery.glb",
             "position": [1200, 300, 200], 
             "scale": [0.2, 0.2, 0.2],
