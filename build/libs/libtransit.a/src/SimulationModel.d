@@ -88,7 +88,10 @@
  ../../dependencies/include/picojson.h \
  ../../dependencies/include/picojson.h include/CompositeFactory.h \
  include/IEntityFactory.h include/Drone.h include/IStrategy.h \
- include/DroneFactory.h include/RobotFactory.h include/Robot.h
+ include/DroneFactory.h include/RobotFactory.h include/Robot.h \
+ include/CreeperFactory.h include/Creeper.h include/HelicopterFactory.h \
+ include/Helicopter.h include/CarFactory.h include/Car.h \
+ include/RechargeStationFactory.h include/RechargeStation.h
 
 include/SimulationModel.h:
 
@@ -287,3 +290,19 @@ include/DroneFactory.h:
 include/RobotFactory.h:
 
 include/Robot.h:
+
+include/CreeperFactory.h:
+
+include/Creeper.h:
+
+include/HelicopterFactory.h:
+
+include/Helicopter.h:
+
+include/CarFactory.h:
+
+include/Car.h:
+
+include/RechargeStationFactory.h:
+
+include/RechargeStation.h:

@@ -86,7 +86,7 @@
  ../../dependencies/include/libwebsockets/lws-settings.h \
  ../../dependencies/include/libwebsockets/lws-netdev.h \
  ../../dependencies/include/picojson.h \
- ../../dependencies/include/picojson.h
+ ../../dependencies/include/picojson.h include/IStrategy.h
 
 include/BatteryDecorator.h:
 
@@ -269,3 +269,5 @@ include/util/json.h:
 ../../dependencies/include/picojson.h:
 
 ../../dependencies/include/picojson.h:
+
+include/IStrategy.h:
