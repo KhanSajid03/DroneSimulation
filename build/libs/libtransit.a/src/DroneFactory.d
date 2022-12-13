@@ -87,7 +87,8 @@
  ../../dependencies/include/libwebsockets/lws-netdev.h \
  ../../dependencies/include/picojson.h \
  ../../dependencies/include/picojson.h include/IEntityFactory.h \
- include/Drone.h include/IStrategy.h
+ include/Drone.h include/IStrategy.h include/BatteryDecorator.h \
+ include/RechargeStation.h
 
 include/DroneFactory.h:
 
@@ -276,3 +277,7 @@ include/IEntityFactory.h:
 include/Drone.h:
 
 include/IStrategy.h:
+
+include/BatteryDecorator.h:
+
+include/RechargeStation.h:

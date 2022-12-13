@@ -6,11 +6,6 @@
 #include "SpinDecorator.h"
 #include "JumpDecorator.h"
 
-
-BatteryDecorator::BatteryDecorator(Drone *drone) {
-  this->drone = drone;
-}
-
 void BatteryDecorator::Update(double dt, std::vector<IEntity*> scheduler, std::vector<IEntity*> stations) {
   if (drone->GetAvailability() && batteryLevel > 1) {
     batteryLevel -= 0.01;
