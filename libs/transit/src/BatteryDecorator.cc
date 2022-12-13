@@ -25,9 +25,14 @@ void BatteryDecorator::Update(double dt, std::vector<IEntity*> scheduler, std::v
     drone->Update(dt, scheduler);
   }
   else {
-    if(nearestEntity) { // checking that recharge station exists
-      nearestEntity->SetAvailability(false);
-      destination = nearestEntity->GetPosition(); // getting position of recharge station
+    GetNearestRechargeStation(stations);
+    if(nearestRechargeEntity) { // checking that recharge station exists
+      nearestRechargeEntity->SetAvailability(false);
+      destination = nearestRechargeEntity->GetPosition(); // getting position of recharge station
+      toTargetPosStrategy = new BeelineStrategy(this->GetPosition(), destination);
+    }
+    else {
+      std::cout << "couldn't fetch nearest recharge station. Line 28. \n";
     }
   }
 }
@@ -39,17 +44,12 @@ void BatteryDecorator::GetNearestRechargeStation(std::vector<IEntity*> stations)
       float disToEntity = this->position.Distance(entity->GetPosition());
       if (disToEntity <= minDis) {
         minDis = disToEntity;
-        NearestRechargeEntity = entity;
+        nearestRechargeEntity = entity;
       }
     }
   }
   return; 
 }
 
-
-  // if(nearestEntity) { // if RechargeStation exists, Beeline to it
-  //   nearestEntity->SetAvailability(false); // not available anymore
-  //   destination = nearestEntity->GetPosition();
-  //   toTargetPosStrategy = new BeelineStrategy(this->GetPosition(), destination);
-  // }
+  
 

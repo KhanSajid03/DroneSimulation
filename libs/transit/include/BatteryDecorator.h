@@ -49,7 +49,7 @@ class BatteryDecorator : public IEntity {
   bool pickedUp;
   std::string strategyName;
   IEntity* nearestEntity = NULL;
-  IEntity* NearestRechargeEntity = NULL;
+  IEntity* nearestRechargeEntity = NULL;
   IStrategy* toTargetPosStrategy = NULL;
   IStrategy* toTargetDestStrategy = NULL;
   JsonObject details;
