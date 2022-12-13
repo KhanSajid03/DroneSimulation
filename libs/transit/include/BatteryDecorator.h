@@ -23,6 +23,12 @@ class BatteryDecorator : public IEntity {
   void SetPosition(Vector3 pos_) { drone->SetPosition(pos_); }
   void SetDirection(Vector3 dir_) { drone->SetDirection(dir_); }
   void SetDestination(Vector3 des_) { drone->SetDestination(des_); }
+  virtual std::string GetStrategyName(){ return drone->GetStrategyName(); }
+  virtual void SetAvailability(bool choice) { drone->SetAvailability(choice); }
+  void SetGraph(const IGraph* graph) { drone->SetGraph(graph); }
+  virtual void SetStrategyName(std::string strategyName_){ drone->SetStrategyName(strategyName_); }
+  virtual void Rotate(double angle) { drone->Rotate(angle); }
+  virtual void Jump(double height) { drone->Jump(height); }
 
   /**
    * Check if entity is drone, returns true in this case
@@ -33,6 +39,7 @@ class BatteryDecorator : public IEntity {
 
  protected:
   float batteryLevel = 100;
+  double timeSinceLastBatteryLevelPrint = 0;
   Drone* drone = NULL;
 };  // close class
 
