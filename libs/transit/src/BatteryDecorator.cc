@@ -45,45 +45,10 @@ void BatteryDecorator::GetNearestRechargeStation(std::vector<RechargeStation*> s
       }
     }
   }
-
-  if(nearestEntity) {
-
-
-  }
-
-}
-
-void BatteryDecorator::GetNearestEntity(std::vector<IEntity*> scheduler) {
-  float minDis = std::numeric_limits<float>::max();
-  for (auto entity : scheduler) {
-    if (entity->GetAvailability()) {
-      float disToEntity = this->position.Distance(entity->GetPosition());
-      if (disToEntity <= minDis) {
-        minDis = disToEntity;
-        nearestEntity = entity;
-      }
-    }
-  }
-
-  if(nearestEntity){
-    nearestEntity->SetAvailability(false);  // set availability to the nearest entity
-    available = false;
-    pickedUp = false;
-
+  if(nearestEntity) { // if RechargeStation exists, Beeline to it
+    nearestEntity->SetAvailability(false); // not available anymore
     destination = nearestEntity->GetPosition();
-
     toTargetPosStrategy = new BeelineStrategy(this->GetPosition(), destination);
-    std::string targetStrategyName = nearestEntity->GetStrategyName();
-    if(targetStrategyName.compare("astar") == 0){
-        toTargetDestStrategy = new AstarStrategy(nearestEntity->GetPosition(), nearestEntity->GetDestination(), graph);
-        toTargetDestStrategy = new SpinDecorator(toTargetDestStrategy);
-    } else if (targetStrategyName.compare("dfs") == 0){
-        toTargetDestStrategy = new DfsStrategy(nearestEntity->GetPosition(), nearestEntity->GetDestination(), graph);
-        toTargetDestStrategy = new JumpDecorator(toTargetDestStrategy);
-    } else if (targetStrategyName.compare("dijkstra") == 0){
-        toTargetDestStrategy = new DijkstraStrategy(nearestEntity->GetPosition(), nearestEntity->GetDestination(), graph);
-        toTargetDestStrategy = new SpinDecorator(toTargetDestStrategy);
-        toTargetDestStrategy = new JumpDecorator(toTargetDestStrategy);
-    } 
   }
 }
+
