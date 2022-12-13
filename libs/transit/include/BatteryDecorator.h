@@ -44,7 +44,7 @@ class BatteryDecorator : public IEntity {
  protected:
   float batteryLevel = 100;
   double timeSinceLastBatteryLevelPrint = 0;
-  float BATTERY_RATE = 1.0;
+  float BATTERY_RATE = 0.25;
   RechargeStation* nearestRechargeStation;
   Drone* drone = NULL;
   bool onRechargeMission = false;

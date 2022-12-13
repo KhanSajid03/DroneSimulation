@@ -12,6 +12,7 @@ class CelebrationDecorator : public IStrategy {
     time = 0;
   }
   void Move(IEntity *entity, double dt);
+  std::vector<std::vector<float>> GetPath() override { return strategy->GetPath(); }
   bool IsCompleted();
 
  protected:
