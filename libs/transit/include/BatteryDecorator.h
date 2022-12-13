@@ -5,6 +5,7 @@
 
 #include "Drone.h"
 #include "IStrategy.h"
+#include "RechargeStation.h"
 
 class BatteryDecorator : public IEntity {
  public:
@@ -19,7 +20,7 @@ class BatteryDecorator : public IEntity {
   Vector3 GetDestination() const { return drone->GetDestination(); }
   JsonObject GetDetails() const { return drone->GetDetails(); }
   bool GetAvailability() const { return drone->GetAvailability(); }
-  void GetNearestEntity(std::vector<IEntity*> scheduler) { return drone->GetNearestEntity(scheduler); }
+  void GetNearestEntity(std::vector<IEntity*> scheduler);
   void SetPosition(Vector3 pos_) { drone->SetPosition(pos_); }
   void SetDirection(Vector3 dir_) { drone->SetDirection(dir_); }
   void SetDestination(Vector3 des_) { drone->SetDestination(des_); }
@@ -29,6 +30,9 @@ class BatteryDecorator : public IEntity {
   virtual void SetStrategyName(std::string strategyName_){ drone->SetStrategyName(strategyName_); }
   virtual void Rotate(double angle) { drone->Rotate(angle); }
   virtual void Jump(double height) { drone->Jump(height); }
+
+  void GetNearestRechargeStation();
+  bool hasEnoughBatteryForDist(float dist);
 
   /**
    * Check if entity is drone, returns true in this case
@@ -40,7 +44,10 @@ class BatteryDecorator : public IEntity {
  protected:
   float batteryLevel = 100;
   double timeSinceLastBatteryLevelPrint = 0;
+  float BATTERY_RATE = 1.0;
+  RechargeStation* nearestRechargeStation;
   Drone* drone = NULL;
+  bool onRechargeMission = false;
 };  // close class
 
 #endif  // BATTERY_DECORATOR_H_

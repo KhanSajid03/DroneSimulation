@@ -3,6 +3,9 @@
 BeelineStrategy::BeelineStrategy(Vector3 position, Vector3 destination) {
     this->position = position;
     this->destination = destination;
+    
+    path.push_back(position.toCppVector());
+    path.push_back(destination.toCppVector());
 }
 
 bool BeelineStrategy::IsCompleted(){

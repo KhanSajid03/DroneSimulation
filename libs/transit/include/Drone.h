@@ -42,9 +42,13 @@ class Drone : public IEntity {
 
   void SetDestination(Vector3 des_) { destination = des_; }
 
-  IStrategy* getToTargetPosStrategy() { return toTargetPosStrategy; }
+  IStrategy* GetToTargetPosStrategy() { return toTargetPosStrategy; }
 
-  IStrategy* getToTargetDestStrategy() { return toTargetDestStrategy; }
+  IStrategy* GetToTargetDestStrategy() { return toTargetDestStrategy; }
+
+  void SetToTargetPosStrategy(IStrategy* strategy) { this->toTargetPosStrategy = strategy; }
+
+  void SetToTargetDestStrategy(IStrategy* strategy) { this->toTargetDestStrategy = strategy; }
 
   // Rotates a drone
   void Rotate(double angle);

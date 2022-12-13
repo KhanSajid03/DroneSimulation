@@ -5,6 +5,8 @@
 #include <iostream>
 #include <vector>
 
+// TODO: docuent new constructor/function
+
 /// @brief A class built solely to handle 3D vector mathematics.
 class Vector3 {
  public:
@@ -25,6 +27,12 @@ class Vector3 {
    * @param[in] z_ z-coordinate
    */
   Vector3(float x_, float y_, float z_);
+
+  Vector3(std::vector<float> v) {
+    x = v[0];
+    y = v[1];
+    z = v[2];
+  }
 
   /**
    * @brief Overrides + operator.
@@ -100,6 +108,15 @@ class Vector3 {
    * @brief Prints vector to nicely formatted string
    */
   void Print();
+
+  std::vector<float> toCppVector() {
+    std::vector<float> result;
+    result.push_back(x);
+    result.push_back(y);
+    result.push_back(z);
+ 
+    return result;
+  }
 };
 
 #endif  // Vector3_H_
