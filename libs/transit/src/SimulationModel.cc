@@ -61,8 +61,8 @@ void SimulationModel::ScheduleTrip(JsonObject& details) {
 /// Updates the simulation
 void SimulationModel::Update(double dt) {
   for (int i = 0; i < entities.size(); i++) {
-    if (entities[i]->IsCreeper()) {
-      entities[i]->Update(dt, entities);
+    if (entities[i]->IsDrone()) {
+      entities[i]->Update(dt, scheduler, stations);
     } else {
       entities[i]->Update(dt, scheduler);
     }
