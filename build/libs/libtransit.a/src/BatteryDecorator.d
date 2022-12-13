@@ -1,6 +1,6 @@
 ../../build/libs/libtransit.a/src/BatteryDecorator.o: \
- src/BatteryDecorator.cc include/BatteryDecorator.h include/IEntity.h \
- ../../libs/routing/include/graph.h \
+ src/BatteryDecorator.cc include/BatteryDecorator.h include/Drone.h \
+ include/IEntity.h ../../libs/routing/include/graph.h \
  ../../libs/routing/include/routing_strategy.h \
  ../../libs/routing/include/graph.h \
  ../../libs/routing/include/distance_function.h \
@@ -89,6 +89,8 @@
  ../../dependencies/include/picojson.h include/IStrategy.h
 
 include/BatteryDecorator.h:
+
+include/Drone.h:
 
 include/IEntity.h:
 
