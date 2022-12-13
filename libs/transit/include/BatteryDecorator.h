@@ -10,7 +10,7 @@
 class BatteryDecorator : public IEntity {
  public:
   BatteryDecorator(Drone* drone);
-  void Update(double dt);
+  void Update(double dt, std::vector<IEntity*> scheduler, std::vector<IEntity*> stations);
   void CalculateBatteryLevel(); // calculating the battery level based on the distance required to complete the trip
 
   // FUNCTIONS FROM IEntity
@@ -30,7 +30,7 @@ class BatteryDecorator : public IEntity {
   virtual void SetStrategyName(std::string strategyName_){ drone->SetStrategyName(strategyName_); }
   virtual void Rotate(double angle) { drone->Rotate(angle); }
   virtual void Jump(double height) { drone->Jump(height); }
-  RechargeStation GetNearestRechargeStation(std::vector<RechargeStation*> stations);
+  virtual void GetNearestRechargeStation(std::vector<IEntity*> stations);
 
   /**
    * Check if entity is drone, returns true in this case

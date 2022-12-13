@@ -11,7 +11,7 @@ BatteryDecorator::BatteryDecorator(Drone *drone) {
   this->drone = drone;
 }
 
-void BatteryDecorator::Update(float dt) {
+void BatteryDecorator::Update(double dt, std::vector<IEntity*> scheduler, std::vector<IEntity*> stations) {
   if (drone->GetAvailability() && batteryLevel > 1) {
     batteryLevel -= 0.01;
   }
@@ -22,7 +22,7 @@ void BatteryDecorator::Update(float dt) {
     timeSinceLastBatteryLevelPrint = 0.0;
   }
   if (batteryLevel > 250) { // within threshold
-    drone->Update(dt);
+    drone->Update(dt, scheduler);
   }
   else {
     if(nearestEntity) { // checking that recharge station exists
@@ -32,7 +32,7 @@ void BatteryDecorator::Update(float dt) {
   }
 }
 
-RechargeStation BatteryDecorator::GetNearestRechargeStation(RechargeStation* stations) {
+void BatteryDecorator::GetNearestRechargeStation(std::vector<IEntity*> stations) {
   float minDis = std::numeric_limits<float>::max();
   for (auto entity : stations) {
     if (entity->GetAvailability()) {
@@ -43,7 +43,7 @@ RechargeStation BatteryDecorator::GetNearestRechargeStation(RechargeStation* sta
       }
     }
   }
-  return NearestRechargeEntity;
+  return; 
 }
 
 
