@@ -3,22 +3,59 @@
 
 #include <vector>
 
-#include "IEntity.h"
+#include "Drone.h"
 #include "IStrategy.h"
+#include "RechargeStation.h"
 
 class BatteryDecorator : public IEntity {
  public:
-  BatteryDecorator(IEntity *entity) {}
-  void Update(double dt);
-  void CalculateBatteryLevel(float BatteryLevel); // calculating the battery level based on the distance required to complete the trip
+  BatteryDecorator(Drone* drone, RechargeStation* stations);
+  void Update(double dt, std::vector<IEntity*> scheduler);
+  void CalculateBatteryLevel(); // calculating the battery level based on the distance required to complete the trip
+
+  // FUNCTIONS FROM IEntity
+  float GetSpeed() const { return drone->GetSpeed(); }
+  Vector3 GetPosition() const { return drone->GetPosition(); }
+  Vector3 GetDirection() const { return drone->GetDirection(); }
+  Vector3 GetDestination() const { return drone->GetDestination(); }
+  JsonObject GetDetails() const { return drone->GetDetails(); }
+  bool GetAvailability() const { return drone->GetAvailability(); }
+  void GetNearestEntity(std::vector<IEntity*> scheduler) { return drone->GetNearestEntity(scheduler); }
+  void SetPosition(Vector3 pos_) { drone->SetPosition(pos_); }
+  void SetDirection(Vector3 dir_) { drone->SetDirection(dir_); }
+  void SetDestination(Vector3 des_) { drone->SetDestination(des_); }
+  virtual std::string GetStrategyName(){ return drone->GetStrategyName(); }
+  virtual void SetAvailability(bool choice) { drone->SetAvailability(choice); }
+  void SetGraph(const IGraph* graph) override { this->graph = graph; drone->SetGraph(graph); }
+  virtual void SetStrategyName(std::string strategyName_){ drone->SetStrategyName(strategyName_); }
+  virtual void Rotate(double angle) { drone->Rotate(angle); }
+  virtual void Jump(double height) { drone->Jump(height); }
+  void GetNearestEntity(std::vector<IEntity*> scheduler);
+  void GetNearestRechargeStation(std::vector<RechargeStation*> stations);
+
+  /**
+   * Check if entity is drone, returns true in this case
+   * 
+   * @return true, since the object is a drone
+   */
+  bool IsDrone() override { return drone->IsDrone(); }
 
  protected:
-  float BatteryLevel;
+  float batteryLevel = 100;
+  double timeSinceLastBatteryLevelPrint = 0;
+  Drone* drone = NULL;
+  RechargeStation* stations = NULL;
+  float speed;
+  bool available;
+  bool pickedUp;
+  std::string strategyName;
   IEntity* nearestEntity = NULL;
   IStrategy* toTargetPosStrategy = NULL;
   IStrategy* toTargetDestStrategy = NULL;
+  JsonObject details;
+  Vector3 position;
+  Vector3 direction;
   Vector3 destination;
-
 };  // close class
 
 #endif  // BATTERY_DECORATOR_H_
