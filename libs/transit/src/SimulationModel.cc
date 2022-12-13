@@ -5,6 +5,7 @@
 #include "HelicopterFactory.h"
 #include  "CarFactory.h"
 #include  "RechargeStationFactory.h"
+#include  "BatteryDecorator.h"
 
 SimulationModel::SimulationModel(IController& controller)
     : controller(controller) {
@@ -29,6 +30,9 @@ void SimulationModel::CreateEntity(JsonObject& entity) {
   // Call AddEntity to add it to the view
   controller.AddEntity(*myNewEntity);
   entities.push_back(myNewEntity);
+  if (myNewEntity->isRechargeStation()) {
+    stations.push_back(myNewEntity);
+  }
 }
 
 /// Schedules a trip for an object in the scene

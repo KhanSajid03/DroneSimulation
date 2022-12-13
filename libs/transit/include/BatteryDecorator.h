@@ -9,8 +9,8 @@
 
 class BatteryDecorator : public IEntity {
  public:
-  BatteryDecorator(Drone* drone, RechargeStation* stations);
-  void Update(double dt, std::vector<IEntity*> scheduler);
+  BatteryDecorator(Drone* drone);
+  void Update(double dt);
   void CalculateBatteryLevel(); // calculating the battery level based on the distance required to complete the trip
 
   // FUNCTIONS FROM IEntity
@@ -30,8 +30,7 @@ class BatteryDecorator : public IEntity {
   virtual void SetStrategyName(std::string strategyName_){ drone->SetStrategyName(strategyName_); }
   virtual void Rotate(double angle) { drone->Rotate(angle); }
   virtual void Jump(double height) { drone->Jump(height); }
-  void GetNearestEntity(std::vector<IEntity*> scheduler);
-  void GetNearestRechargeStation(std::vector<RechargeStation*> stations);
+  RechargeStation GetNearestRechargeStation(std::vector<RechargeStation*> stations);
 
   /**
    * Check if entity is drone, returns true in this case
@@ -41,15 +40,16 @@ class BatteryDecorator : public IEntity {
   bool IsDrone() override { return drone->IsDrone(); }
 
  protected:
-  float batteryLevel = 100;
+  float batteryLevel = 500;
   double timeSinceLastBatteryLevelPrint = 0;
   Drone* drone = NULL;
-  RechargeStation* stations = NULL;
+  // RechargeStation* stations = NULL;
   float speed;
   bool available;
   bool pickedUp;
   std::string strategyName;
   IEntity* nearestEntity = NULL;
+  IEntity* NearestRechargeEntity = NULL;
   IStrategy* toTargetPosStrategy = NULL;
   IStrategy* toTargetDestStrategy = NULL;
   JsonObject details;

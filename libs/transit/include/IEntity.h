@@ -53,6 +53,13 @@ class IEntity {
    */
   virtual bool IsDrone() { return false; }
 
+  /**
+   * Check if entity is a RechargeStation
+   * 
+   * @return true if entity is a RechargeStation, false otherwise
+   */
+  virtual bool isRechargeStation() { return false; }
+
 
  protected:
   int id;

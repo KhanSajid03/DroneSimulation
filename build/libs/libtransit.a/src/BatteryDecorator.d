@@ -86,7 +86,11 @@
  ../../dependencies/include/libwebsockets/lws-settings.h \
  ../../dependencies/include/libwebsockets/lws-netdev.h \
  ../../dependencies/include/picojson.h \
- ../../dependencies/include/picojson.h include/IStrategy.h
+ ../../dependencies/include/picojson.h include/IStrategy.h \
+ include/RechargeStation.h include/AstarStrategy.h \
+ include/BeelineStrategy.h include/DfsStrategy.h \
+ include/DijkstraStrategy.h include/SpinDecorator.h \
+ include/CelebrationDecorator.h include/JumpDecorator.h
 
 include/BatteryDecorator.h:
 
@@ -273,3 +277,19 @@ include/util/json.h:
 ../../dependencies/include/picojson.h:
 
 include/IStrategy.h:
+
+include/RechargeStation.h:
+
+include/AstarStrategy.h:
+
+include/BeelineStrategy.h:
+
+include/DfsStrategy.h:
+
+include/DijkstraStrategy.h:
+
+include/SpinDecorator.h:
+
+include/CelebrationDecorator.h:
+
+include/JumpDecorator.h:

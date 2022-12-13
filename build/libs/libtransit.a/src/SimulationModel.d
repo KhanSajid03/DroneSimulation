@@ -91,7 +91,8 @@
  include/DroneFactory.h include/RobotFactory.h include/Robot.h \
  include/CreeperFactory.h include/Creeper.h include/HelicopterFactory.h \
  include/Helicopter.h include/CarFactory.h include/Car.h \
- include/RechargeStationFactory.h include/RechargeStation.h
+ include/RechargeStationFactory.h include/RechargeStation.h \
+ include/BatteryDecorator.h
 
 include/SimulationModel.h:
 
@@ -306,3 +307,5 @@ include/Car.h:
 include/RechargeStationFactory.h:
 
 include/RechargeStation.h:
+
+include/BatteryDecorator.h:

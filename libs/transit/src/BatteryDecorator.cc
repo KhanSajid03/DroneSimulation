@@ -7,12 +7,11 @@
 #include "JumpDecorator.h"
 
 
-BatteryDecorator::BatteryDecorator(Drone *drone, RechargeStation* stations) {
+BatteryDecorator::BatteryDecorator(Drone *drone) {
   this->drone = drone;
-  this->stations = stations;
 }
 
-void BatteryDecorator::Update(double dt, std::vector<IEntity*> scheduler) {
+void BatteryDecorator::Update(float dt) {
   if (drone->GetAvailability() && batteryLevel > 1) {
     batteryLevel -= 0.01;
   }
@@ -22,33 +21,35 @@ void BatteryDecorator::Update(double dt, std::vector<IEntity*> scheduler) {
     std::cout << "Battery Level: " << batteryLevel << std::endl;
     timeSinceLastBatteryLevelPrint = 0.0;
   }
-  if (batteryLevel > 50) { // within threshold
-    drone->Update(dt, scheduler);
+  if (batteryLevel > 250) { // within threshold
+    drone->Update(dt);
   }
   else {
     if(nearestEntity) { // checking that recharge station exists
       nearestEntity->SetAvailability(false);
       destination = nearestEntity->GetPosition(); // getting position of recharge station
-
     }
   }
 }
 
-void BatteryDecorator::GetNearestRechargeStation(std::vector<RechargeStation*> stations) {
+RechargeStation BatteryDecorator::GetNearestRechargeStation(RechargeStation* stations) {
   float minDis = std::numeric_limits<float>::max();
   for (auto entity : stations) {
     if (entity->GetAvailability()) {
       float disToEntity = this->position.Distance(entity->GetPosition());
       if (disToEntity <= minDis) {
         minDis = disToEntity;
-        nearestEntity = entity;
+        NearestRechargeEntity = entity;
       }
     }
   }
-  if(nearestEntity) { // if RechargeStation exists, Beeline to it
-    nearestEntity->SetAvailability(false); // not available anymore
-    destination = nearestEntity->GetPosition();
-    toTargetPosStrategy = new BeelineStrategy(this->GetPosition(), destination);
-  }
+  return NearestRechargeEntity;
 }
+
+
+  // if(nearestEntity) { // if RechargeStation exists, Beeline to it
+  //   nearestEntity->SetAvailability(false); // not available anymore
+  //   destination = nearestEntity->GetPosition();
+  //   toTargetPosStrategy = new BeelineStrategy(this->GetPosition(), destination);
+  // }
 
