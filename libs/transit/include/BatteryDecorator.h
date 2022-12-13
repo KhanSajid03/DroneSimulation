@@ -25,7 +25,7 @@ class BatteryDecorator : public IEntity {
   void SetDestination(Vector3 des_) { drone->SetDestination(des_); }
   virtual std::string GetStrategyName(){ return drone->GetStrategyName(); }
   virtual void SetAvailability(bool choice) { drone->SetAvailability(choice); }
-  void SetGraph(const IGraph* graph) { drone->SetGraph(graph); }
+  void SetGraph(const IGraph* graph) override { this->graph = graph; drone->SetGraph(graph); }
   virtual void SetStrategyName(std::string strategyName_){ drone->SetStrategyName(strategyName_); }
   virtual void Rotate(double angle) { drone->Rotate(angle); }
   virtual void Jump(double height) { drone->Jump(height); }
