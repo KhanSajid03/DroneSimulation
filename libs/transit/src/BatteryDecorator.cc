@@ -30,6 +30,7 @@ void BatteryDecorator::Update(double dt, std::vector<IEntity*> scheduler, std::v
       nearestRechargeEntity->SetAvailability(false);
       destination = nearestRechargeEntity->GetPosition(); // getting position of recharge station
       toTargetPosStrategy = new BeelineStrategy(this->GetPosition(), destination);
+
     }
     else {
       std::cout << "couldn't fetch nearest recharge station. Line 28. \n";
