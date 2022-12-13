@@ -60,6 +60,8 @@ class IEntity {
    */
   virtual bool isRechargeStation() { return false; }
 
+  virtual void GetNearestEntity(std::vector<IEntity*> scheduler) {} 
+
 
  protected:
   int id;

@@ -71,7 +71,7 @@ class Helicopter : public IEntity {
    * 
    * @param entities list of entity objects
    */
-  void GetNearestEntity(std::vector<IEntity*> scheduler);
+  void GetNearestEntity(std::vector<IEntity*> scheduler) override {}
 
   /**
    * Updates the entity

@@ -32,6 +32,7 @@ void SimulationModel::CreateEntity(JsonObject& entity) {
   entities.push_back(myNewEntity);
   if (myNewEntity->isRechargeStation()) {
     stations.push_back(myNewEntity);
+    std::cout << "pushing recharge new station\n";
   }
 }
 

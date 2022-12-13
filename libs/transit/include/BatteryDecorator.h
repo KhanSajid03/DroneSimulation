@@ -9,7 +9,7 @@
 
 class BatteryDecorator : public IEntity {
  public:
-  BatteryDecorator(Drone *drone_) {
+  BatteryDecorator(IEntity *drone_) {
       drone = drone_;
   }
   void Update(double dt, std::vector<IEntity*> scheduler, std::vector<IEntity*> stations);
@@ -22,7 +22,7 @@ class BatteryDecorator : public IEntity {
   Vector3 GetDestination() const { return drone->GetDestination(); }
   JsonObject GetDetails() const { return drone->GetDetails(); }
   bool GetAvailability() const { return drone->GetAvailability(); }
-  void GetNearestEntity(std::vector<IEntity*> scheduler) { return drone->GetNearestEntity(scheduler); }
+  void GetNearestEntity(std::vector<IEntity*> scheduler) {}
   void SetPosition(Vector3 pos_) { drone->SetPosition(pos_); }
   void SetDirection(Vector3 dir_) { drone->SetDirection(dir_); }
   void SetDestination(Vector3 des_) { drone->SetDestination(des_); }
@@ -44,7 +44,7 @@ class BatteryDecorator : public IEntity {
  protected:
   float batteryLevel = 500;
   double timeSinceLastBatteryLevelPrint = 0;
-  Drone* drone = NULL;
+  IEntity* drone = NULL;
   // RechargeStation* stations = NULL;
   float speed;
   bool available;

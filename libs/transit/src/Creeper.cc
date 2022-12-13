@@ -32,16 +32,18 @@ void Creeper::FindDrone(std::vector<IEntity*> entities) {
 // TODO: scheduler only contains robots
 void Creeper::Update(double dt, std::vector<IEntity*> entities) {
   
-  if(!followingDrone) {
-    FindDrone(entities);
-  } else {
+  // if(!followingDrone) {
+  //   FindDrone(entities);
+  // } else {
 
-    if ((position-drone->GetPosition()).Magnitude() <= 5)  return;
+  //   if ((position-drone->GetPosition()).Magnitude() <= 5)  return;
 
-    Vector3 yOffset(0, 100, 0);
-    destination = drone->GetPosition() + yOffset;
+  //   Vector3 yOffset(0, 100, 0);
+  //   destination = drone->GetPosition() + yOffset;
 
-    Vector3 direction = (destination-position).Unit();
-    position = position + (direction * speed * dt);
-  }
+  //   Vector3 direction = (destination-position).Unit();
+  //   position = position + (direction * speed * dt);
+  // }
+
+  return;
 }

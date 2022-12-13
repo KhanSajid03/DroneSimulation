@@ -52,7 +52,7 @@ class RechargeStation : public IEntity {
   //  * 
   //  * @return true, since the object is a RechargeStation
   //  */
-  // bool IsRechargeStation() override { return true; }
+  bool isRechargeStation() override { return true; }
 
   // Removing the copy constructor and assignment operator
   // so that RechargeStations cannot be coppied.
