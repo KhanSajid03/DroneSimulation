@@ -21,3 +21,6 @@ class CelebrationDecorator : public IStrategy {
 };  // close class
 
 #endif  // CELEBRATION_DECORATOR_H_
+
+
+// TODO: do we need destructor?

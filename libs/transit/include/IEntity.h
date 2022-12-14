@@ -48,11 +48,11 @@ class IEntity {
   virtual bool IsCreeper() { return false; }
 
   /**
-   * Check if entity is a drone
+   * Check if entity is a battery drone
    * 
-   * @return true if entity is a drone, false otherwise
+   * @return true if entity is a battery drone, false otherwise
    */
-  virtual bool IsDrone() { return false; }
+  virtual bool IsBatteryDrone() { return false; }
 
   /**
    * Check if entity is a RechargeStation

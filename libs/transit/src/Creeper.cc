@@ -17,7 +17,7 @@ JsonObject Creeper::GetDetails() const { return details; }
 void Creeper::FindDrone(std::vector<IEntity*> entities) {
 
   for (auto entity : entities) {
-    if (entity->IsDrone()) {
+    if (entity->IsBatteryDrone()) {
       drone = dynamic_cast<Drone*>(entity);
       followingDrone = true;
       return;

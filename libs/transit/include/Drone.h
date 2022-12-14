@@ -55,13 +55,6 @@ class Drone : public IEntity {
 
   void Jump(double height);
 
-  /**
-   * Check if entity is drone, returns true in this case
-   * 
-   * @return true, since the object is a drone
-   */
-  bool IsDrone() override { return true; }
-
   // Removing the copy constructor and assignment operator
   // so that drones cannot be coppied.
   Drone(const Drone& drone) = delete;

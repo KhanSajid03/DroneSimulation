@@ -3,16 +3,15 @@
 #include "RobotFactory.h"
 #include "CreeperFactory.h"
 #include "HelicopterFactory.h"
-#include  "CarFactory.h"
-#include  "RechargeStationFactory.h"
-#include  "BatteryDecorator.h"
+#include "CarFactory.h"
+#include "RechargeStationFactory.h"
+#include "BatteryDroneDecorator.h"
 
 SimulationModel::SimulationModel(IController& controller)
     : controller(controller) {
   compFactory = new CompositeFactory();
   AddFactory(new DroneFactory());
   AddFactory(new RobotFactory());
-  AddFactory(new CreeperFactory());
   AddFactory(new HelicopterFactory());
   AddFactory(new CarFactory());
   AddFactory(new RechargeStationFactory());
@@ -62,8 +61,7 @@ void SimulationModel::ScheduleTrip(JsonObject& details) {
 /// Updates the simulation
 void SimulationModel::Update(double dt) {
   for (int i = 0; i < entities.size(); i++) {
-    if (entities[i]->IsDrone()) {
-      // BatteryDecorator* batDrone = dynamic_cast<BatteryDecorator*>(entities[i]);  // TODO: see if you can do this the right way
+    if (entities[i]->IsBatteryDrone()) {
       entities[i]->Update(dt, scheduler, stations);
     } else {
       entities[i]->Update(dt, scheduler);
