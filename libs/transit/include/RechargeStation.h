@@ -30,10 +30,10 @@ class RechargeStation : public IEntity {
 
   bool GetAvailability() const { return available; }
 
-  void GetNearestEntity(std::vector<IEntity*> scheduler);
+  // void GetNearestEntity(std::vector<IEntity*> scheduler);
 
   // Updates the RechargeStation's position
-  void Update(double dt, std::vector<IEntity*> scheduler);
+  // void Update(double dt, std::vector<IEntity*> scheduler);
 
   void SetPosition(Vector3 pos_) { position = pos_; }
 
@@ -43,9 +43,9 @@ class RechargeStation : public IEntity {
   void SetDestination(Vector3 des_) { destination = des_; }
 
   // Rotates a RechargeStation
-  void Rotate(double angle);
+  // void Rotate(double angle);
 
-  void Jump(double height);
+  // void Jump(double height);
 
   // /**
   //  * Check if entity is RechargeStation, returns true in this case
