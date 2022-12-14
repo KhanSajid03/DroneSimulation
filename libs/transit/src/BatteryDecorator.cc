@@ -20,10 +20,15 @@ void BatteryDecorator::Update(double dt, std::vector<IEntity*> scheduler, std::v
     }
     if (batteryLevel >= 95.0) {
       std::cout << "Battery Charged to " << batteryLevel << std::endl;
-      // std::cout << drone->GetPosition().Distance(nearestRechargeStation->GetPosition()) << std::endl;
       nearestRechargeStation = NULL;
       onRechargeMission = false;
-      drone->SetAvailability(true);
+
+      std::cout << "Rerouting to robot " << std::endl;
+      
+      drone->SetToTargetPosStrategy(new BeelineStrategy(drone->GetPosition(), targetPos));
+      drone->SetToTargetDestStrategy(toTargetDestStrategy);
+
+      return;
     }
   }
 
@@ -44,9 +49,9 @@ void BatteryDecorator::Update(double dt, std::vector<IEntity*> scheduler, std::v
 
 bool BatteryDecorator::hasEnoughBatteryForDist(float dist) {
   float batteryRequired = (BATTERY_RATE / drone->GetSpeed()) * dist;
-  batteryRequired += 5.0; // buffer zone
+  batteryRequired += 25.0; // buffer zone
   std::cout << "Current Battery Level: " << batteryLevel << std::endl;
-  std::cout << "Battery Level Required for Trip: " << batteryRequired << std::endl;
+  std::cout << "Battery Level Required: " << batteryRequired << std::endl;
   return (batteryLevel > batteryRequired);
 }
 
@@ -55,8 +60,8 @@ void BatteryDecorator::GetNearestEntity(std::vector<IEntity*> scheduler, std::ve
 
   drone->GetNearestEntity(scheduler);
 
-  IStrategy* toTargetPosStrategy = drone->GetToTargetPosStrategy();
-  IStrategy* toTargetDestStrategy = drone->GetToTargetDestStrategy();
+  toTargetPosStrategy = drone->GetToTargetPosStrategy();
+  toTargetDestStrategy = drone->GetToTargetDestStrategy();
 
   if (!toTargetPosStrategy || !toTargetDestStrategy) { return; }
 
@@ -90,14 +95,15 @@ void BatteryDecorator::GetNearestEntity(std::vector<IEntity*> scheduler, std::ve
   std::cout << "Trip Distance: " << tripDistance << std::endl;
 
   if (!hasEnoughBatteryForDist(tripDistance)) {
-    std::cout << "Not enough battery for trip." << std::endl << std::endl;
+    std::cout << "Not enough battery for trip" << std::endl << std::endl;
     std::cout << "Routing to nearest recharge station" << std::endl << std::endl;
     onRechargeMission = true;
     drone->SetAvailability(false);
     GetNearestRechargeStation(stations);
+
+    targetPos = drone->GetDestination();
+
     drone->SetToTargetPosStrategy(new BeelineStrategy(drone->GetPosition(), nearestRechargeStation->GetPosition()));
-    
-    delete drone->GetToTargetDestStrategy();
     drone->SetToTargetDestStrategy(NULL);
   }
 
@@ -117,7 +123,7 @@ void BatteryDecorator::GetNearestRechargeStation(std::vector<IEntity*> stations)
   }
 
   if (nearestRechargeStation) {
-    std::cout << "Found recharge station " << minDis << " away." << std::endl << std::endl;
+    std::cout << "Found recharge station " << minDis << " away" << std::endl << std::endl;
   }
 
   return; 

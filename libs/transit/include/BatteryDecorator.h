@@ -7,6 +7,7 @@
 #include "IStrategy.h"
 #include "IEntity.h"
 #include "BeelineStrategy.h"
+#include "math/vector3.h"
 
 class BatteryDecorator : public IEntity {
  public:
@@ -44,12 +45,16 @@ class BatteryDecorator : public IEntity {
   bool IsDrone() override { return drone->IsDrone(); }
 
  protected:
-  float batteryLevel = 100;
+  float batteryLevel = 30.0;
   double timeSinceLastBatteryLevelPrint = 0;
   float BATTERY_RATE = 0.25;
   IEntity* nearestRechargeStation;
   Drone* drone = NULL;
   bool onRechargeMission = false;
+
+  Vector3 targetPos;
+  IStrategy* toTargetPosStrategy = NULL;
+  IStrategy* toTargetDestStrategy = NULL;
 };  // close class
 
 #endif  // BATTERY_DECORATOR_H_

@@ -55,6 +55,7 @@ void SimulationModel::ScheduleTrip(JsonObject& details) {
       break;
     }
   }
+  std::cout << "Trip Scheduled!" << std::endl << std::endl;
   controller.SendEventToView("TripScheduled", details);
 }
 
