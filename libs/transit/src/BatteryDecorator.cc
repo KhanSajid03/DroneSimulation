@@ -16,7 +16,7 @@ void BatteryDecorator::Update(double dt, std::vector<IEntity*> scheduler, std::v
   //   std::cout << "Battery Level: " << batteryLevel << std::endl;
   //   timeSinceLastBatteryLevelPrint = 0.0;
   // }
-
+  // batteryLevel = 100; just for testing...
   if (batteryLevel > 250) { // within threshold
     drone->Update(dt, scheduler);
   }
