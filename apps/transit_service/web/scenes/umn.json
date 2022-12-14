@@ -137,7 +137,6 @@
             "name": "RechargeStation6",
       	    "mesh": "assets/model/battery.glb",
       	    "position": [-600.00, 270, 600.623],
-      	    "position": [498.292, 170, -228.623],
       	    "scale": [1.0, 1.0, 1.0],
       	    "rotation": [0, 0, 0, 0],
             "direction": [1,0,0],
