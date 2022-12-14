@@ -5,6 +5,7 @@
 #include "HelicopterFactory.h"
 #include  "CarFactory.h"
 #include  "RechargeStationFactory.h"
+#include  "BatteryDecorator.h"
 
 SimulationModel::SimulationModel(IController& controller)
     : controller(controller) {
@@ -29,6 +30,10 @@ void SimulationModel::CreateEntity(JsonObject& entity) {
   // Call AddEntity to add it to the view
   controller.AddEntity(*myNewEntity);
   entities.push_back(myNewEntity);
+  if (myNewEntity->isRechargeStation()) {
+    stations.push_back(myNewEntity);
+    std::cout << "pushing recharge new station\n";
+  }
 }
 
 /// Schedules a trip for an object in the scene
@@ -56,8 +61,9 @@ void SimulationModel::ScheduleTrip(JsonObject& details) {
 /// Updates the simulation
 void SimulationModel::Update(double dt) {
   for (int i = 0; i < entities.size(); i++) {
-    if (entities[i]->IsCreeper()) {
-      entities[i]->Update(dt, entities);
+    if (entities[i]->IsDrone()) {
+      // BatteryDecorator* batDrone = dynamic_cast<BatteryDecorator*>(entities[i]);  // TODO: see if you can do this the right way
+      entities[i]->Update(dt, scheduler, stations);
     } else {
       entities[i]->Update(dt, scheduler);
     }

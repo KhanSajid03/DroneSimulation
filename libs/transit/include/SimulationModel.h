@@ -33,6 +33,7 @@ class SimulationModel {
   IController& controller;
   std::vector<IEntity*> entities;
   std::vector<IEntity*> scheduler;
+  std::vector<IEntity*> stations;
   const IGraph* graph;
   CompositeFactory* compFactory;
 };

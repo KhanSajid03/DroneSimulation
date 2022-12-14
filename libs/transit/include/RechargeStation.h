@@ -47,6 +47,13 @@ class RechargeStation : public IEntity {
 
   void Jump(double height);
 
+  /**
+   * Check if entity is RechargeStation, returns true in this case
+   * 
+   * @return true, since the object is a RechargeStation
+   */
+  bool isRechargeStation() override { return true; }
+
   // /**
   //  * Check if entity is RechargeStation, returns true in this case
   //  * 

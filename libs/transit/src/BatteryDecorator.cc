@@ -7,13 +7,25 @@ BatteryDecorator::BatteryDecorator(Drone *drone) {
 }
 
 
-void BatteryDecorator::Update(double dt, std::vector<IEntity*> scheduler) {
+void BatteryDecorator::Update(double dt, std::vector<IEntity*> scheduler, std::vector<IEntity*> stations) {
 
   if (drone->GetAvailability()) {
-    GetNearestEntity(scheduler); 
+    GetNearestEntity(scheduler, stations); 
   }
 
-  if (onRechargeMission) { return; }
+  if (onRechargeMission) { 
+    if (drone->GetPosition().Distance(nearestRechargeStation->GetPosition()) < 5.0) {
+      // std::cout << "At Recharge Station!" << std::endl;
+      batteryLevel += 10.0 * dt;
+    }
+    if (batteryLevel >= 95.0) {
+      std::cout << "Battery Charged to " << batteryLevel << std::endl;
+      // std::cout << drone->GetPosition().Distance(nearestRechargeStation->GetPosition()) << std::endl;
+      nearestRechargeStation = NULL;
+      onRechargeMission = false;
+      drone->SetAvailability(true);
+    }
+  }
 
   if (!drone->GetAvailability() && batteryLevel > 1) {
     batteryLevel -= BATTERY_RATE * dt;
@@ -26,12 +38,6 @@ void BatteryDecorator::Update(double dt, std::vector<IEntity*> scheduler) {
   }
 
   drone->Update(dt, scheduler);
-  
-  // float minDis = std::numeric_limits<float>::max();
-  // if (entity->GetAvailability()) {
-  //   // float disToEntity = this->GetPosition().Distance(entity->GetPosition()); // calculating the distance from current entity to robot
-    
-  // }
 
 }
 
@@ -45,7 +51,7 @@ bool BatteryDecorator::hasEnoughBatteryForDist(float dist) {
 }
 
 
-void BatteryDecorator::GetNearestEntity(std::vector<IEntity*> scheduler) {
+void BatteryDecorator::GetNearestEntity(std::vector<IEntity*> scheduler, std::vector<IEntity*> stations) {
 
   drone->GetNearestEntity(scheduler);
 
@@ -85,26 +91,35 @@ void BatteryDecorator::GetNearestEntity(std::vector<IEntity*> scheduler) {
 
   if (!hasEnoughBatteryForDist(tripDistance)) {
     std::cout << "Not enough battery for trip." << std::endl << std::endl;
+    std::cout << "Routing to nearest recharge station" << std::endl << std::endl;
     onRechargeMission = true;
     drone->SetAvailability(false);
-    // GetNearestRechargeStation();
-    // drone->SetToTargetPosStrategy(new BeelineStrategy(drone->GetPosition(), nearestRechargeStation->GetPosition()));
+    GetNearestRechargeStation(stations);
+    drone->SetToTargetPosStrategy(new BeelineStrategy(drone->GetPosition(), nearestRechargeStation->GetPosition()));
+    
+    delete drone->GetToTargetDestStrategy();
+    drone->SetToTargetDestStrategy(NULL);
   }
 
 }
 
-// void BatteryDecorator::GetNearestRechargeStation(std::vector<IEntity*> stations) {
+void BatteryDecorator::GetNearestRechargeStation(std::vector<IEntity*> stations) {
 
-//   float minDis = std::numeric_limits<float>::max();
-//   for (auto entity : stations) {
-//     if (entity->GetAvailability()) {
-//       float disToEntity = this->position.Distance(entity->GetPosition());
-//       if (disToEntity <= minDis) {
-//         minDis = disToEntity;
-//         nearestRechargeEntity = entity;
-//       }
-//     }
-//   }
-//   return; 
-// }
+  float minDis = std::numeric_limits<float>::max();
+  for (auto entity : stations) {
+    if (entity->GetAvailability()) {
+      float disToEntity = drone->GetPosition().Distance(entity->GetPosition());
+      if (disToEntity <= minDis) {
+        minDis = disToEntity;
+        nearestRechargeStation = entity;
+      }
+    }
+  }
+
+  if (nearestRechargeStation) {
+    std::cout << "Found recharge station " << minDis << " away." << std::endl << std::endl;
+  }
+
+  return; 
+}
 
