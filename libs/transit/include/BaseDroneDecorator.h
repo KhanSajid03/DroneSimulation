@@ -13,7 +13,7 @@ class BaseDroneDecorator : public IEntity {
   BaseDroneDecorator(Drone* drone);
   ~BaseDroneDecorator();
   
-  // FUNCTIONS FROM IEntity
+  // functions from IEntity
   virtual float GetSpeed() const { return drone->GetSpeed(); }
   virtual Vector3 GetPosition() const { return drone->GetPosition(); }
   virtual Vector3 GetDirection() const { return drone->GetDirection(); }
