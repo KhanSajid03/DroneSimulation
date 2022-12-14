@@ -2,6 +2,10 @@
 #include "BatteryDroneDecorator.h"
 
 
+BatteryDroneDecorator::~BatteryDroneDecorator() {
+    delete drone;
+}
+
 void BatteryDroneDecorator::Update(double dt, std::vector<IEntity*> scheduler, std::vector<IEntity*> stations) {
 
   if (drone->GetAvailability()) {

@@ -10,6 +10,9 @@ class BatteryDroneDecorator : public BaseDroneDecorator {
  public:
   BatteryDroneDecorator(Drone* drone) : BaseDroneDecorator(drone) {}
   // TODO: destructor??
+
+  ~BatteryDroneDecorator();
+
   void CalculateBatteryLevel(); // calculating the battery level based on the distance required to complete the trip
 
   void Update(double dt, std::vector<IEntity*> scheduler, std::vector<IEntity*> stations);
