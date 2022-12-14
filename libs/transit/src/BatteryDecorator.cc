@@ -7,16 +7,15 @@
 #include "JumpDecorator.h"
 
 void BatteryDecorator::Update(double dt, std::vector<IEntity*> scheduler, std::vector<IEntity*> stations) {
-  if (drone->GetAvailability() && batteryLevel > 1) {
-    batteryLevel -= 0.01;
-  }
-  timeSinceLastBatteryLevelPrint += dt;
-  std::cout << "timeSinceLastBatteryLevelPrint: " <<  timeSinceLastBatteryLevelPrint << std::endl;
-  if (timeSinceLastBatteryLevelPrint > 1.0) {
-    std::cout << "Battery Level: " << batteryLevel << std::endl;
-    timeSinceLastBatteryLevelPrint = 0.0;
-  }
-  std::cout << "UPdating Battery drone."
+  // if (drone->GetAvailability() && batteryLevel > 1) {
+  //   batteryLevel -= 0.01;
+  // }
+  // timeSinceLastBatteryLevelPrint += dt;
+  // std::cout << "timeSinceLastBatteryLevelPrint: " <<  timeSinceLastBatteryLevelPrint << std::endl;
+  // if (timeSinceLastBatteryLevelPrint > 1.0) {
+  //   std::cout << "Battery Level: " << batteryLevel << std::endl;
+  //   timeSinceLastBatteryLevelPrint = 0.0;
+  // }
 
   if (batteryLevel > 250) { // within threshold
     drone->Update(dt, scheduler);
