@@ -3,15 +3,15 @@
 #include "RobotFactory.h"
 #include "CreeperFactory.h"
 #include "HelicopterFactory.h"
-#include  "CarFactory.h"
-#include  "RechargeStationFactory.h"
+#include "CarFactory.h"
+#include "RechargeStationFactory.h"
+#include "BatteryDroneDecorator.h"
 
 SimulationModel::SimulationModel(IController& controller)
     : controller(controller) {
   compFactory = new CompositeFactory();
   AddFactory(new DroneFactory());
   AddFactory(new RobotFactory());
-  AddFactory(new CreeperFactory());
   AddFactory(new HelicopterFactory());
   AddFactory(new CarFactory());
   AddFactory(new RechargeStationFactory());
@@ -29,6 +29,10 @@ void SimulationModel::CreateEntity(JsonObject& entity) {
   // Call AddEntity to add it to the view
   controller.AddEntity(*myNewEntity);
   entities.push_back(myNewEntity);
+  if (myNewEntity->isRechargeStation()) {
+    stations.push_back(myNewEntity);
+    std::cout << "pushing recharge new station\n";
+  }
 }
 
 /// Schedules a trip for an object in the scene
@@ -50,14 +54,15 @@ void SimulationModel::ScheduleTrip(JsonObject& details) {
       break;
     }
   }
+  std::cout << "Trip Scheduled!" << std::endl << std::endl;
   controller.SendEventToView("TripScheduled", details);
 }
 
 /// Updates the simulation
 void SimulationModel::Update(double dt) {
   for (int i = 0; i < entities.size(); i++) {
-    if (entities[i]->IsCreeper()) {
-      entities[i]->Update(dt, entities);
+    if (entities[i]->IsBatteryDrone()) {
+      entities[i]->Update(dt, scheduler, stations);
     } else {
       entities[i]->Update(dt, scheduler);
     }

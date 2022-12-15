@@ -31,7 +31,8 @@ class IEntity {
   virtual std::string GetStrategyName(){}
   virtual void SetAvailability(bool choice) {}
   virtual void Update(double dt, std::vector<IEntity*> scheduler) {}
-  void SetGraph(const IGraph* graph) { this->graph = graph; }
+  virtual void Update(double dt, std::vector<IEntity*> scheduler, std::vector<IEntity*> stations) {}
+  virtual void SetGraph(const IGraph* graph) { this->graph = graph; }
   virtual void SetPosition(Vector3 pos_) {}
   virtual void SetDirection(Vector3 dir_) {}
   virtual void SetDestination(Vector3 des_) {}
@@ -47,11 +48,18 @@ class IEntity {
   virtual bool IsCreeper() { return false; }
 
   /**
-   * Check if entity is a drone
+   * Check if entity is a battery drone
    * 
-   * @return true if entity is a drone, false otherwise
+   * @return true if entity is a battery drone, false otherwise
    */
-  virtual bool IsDrone() { return false; }
+  virtual bool IsBatteryDrone() { return false; }
+
+  /**
+   * Check if entity is a RechargeStation
+   * 
+   * @return true if entity is a RechargeStation, false otherwise
+   */
+  virtual bool isRechargeStation() { return false; }
 
 
  protected:

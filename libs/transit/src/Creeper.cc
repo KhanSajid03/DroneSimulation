@@ -17,7 +17,7 @@ JsonObject Creeper::GetDetails() const { return details; }
 void Creeper::FindDrone(std::vector<IEntity*> entities) {
 
   for (auto entity : entities) {
-    if (entity->IsDrone()) {
+    if (entity->IsBatteryDrone()) {
       drone = dynamic_cast<Drone*>(entity);
       followingDrone = true;
       return;
@@ -31,10 +31,14 @@ void Creeper::FindDrone(std::vector<IEntity*> entities) {
 
 // TODO: scheduler only contains robots
 void Creeper::Update(double dt, std::vector<IEntity*> entities) {
-  
+
   if(!followingDrone) {
     FindDrone(entities);
   } else {
+
+    if (!drone) {
+      return;
+    }
 
     if ((position-drone->GetPosition()).Magnitude() <= 5)  return;
 

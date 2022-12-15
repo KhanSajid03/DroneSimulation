@@ -87,7 +87,7 @@ class Creeper : public IEntity {
    * 
    * @param entites list of entity objects
    */
-  void FindDrone(std::vector<IEntity*> entites);
+  void FindDrone(std::vector<IEntity*> entities);
 
   /**
    * Updates creeper object such that it beelines toward the drone's position

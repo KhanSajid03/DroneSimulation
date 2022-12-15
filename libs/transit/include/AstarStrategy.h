@@ -19,7 +19,6 @@ public:
     bool IsCompleted();
 
 private:
-    std::vector<std::vector<float>> path;
     int currentIndex;
     int maxIndex;
 }; //end class

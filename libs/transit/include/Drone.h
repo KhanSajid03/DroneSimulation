@@ -42,17 +42,18 @@ class Drone : public IEntity {
 
   void SetDestination(Vector3 des_) { destination = des_; }
 
+  IStrategy* GetToTargetPosStrategy() { return toTargetPosStrategy; }
+
+  IStrategy* GetToTargetDestStrategy() { return toTargetDestStrategy; }
+
+  void SetToTargetPosStrategy(IStrategy* strategy) { this->toTargetPosStrategy = strategy; }
+
+  void SetToTargetDestStrategy(IStrategy* strategy) { this->toTargetDestStrategy = strategy; }
+
   // Rotates a drone
   void Rotate(double angle);
 
   void Jump(double height);
-
-  /**
-   * Check if entity is drone, returns true in this case
-   * 
-   * @return true, since the object is a drone
-   */
-  bool IsDrone() override { return true; }
 
   // Removing the copy constructor and assignment operator
   // so that drones cannot be coppied.

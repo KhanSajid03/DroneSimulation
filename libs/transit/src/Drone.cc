@@ -71,6 +71,10 @@ void Drone::Update(double dt, std::vector<IEntity*> scheduler) {
     if(toTargetPosStrategy->IsCompleted()){
       delete toTargetPosStrategy;
       toTargetPosStrategy = NULL;
+      std::cout << "Drone reached target" << std::endl;
+      if (toTargetDestStrategy) {
+        std::cout << "Drone beginning trip from robot to destination" << std::endl;
+      }
     }
   } else if (toTargetDestStrategy) {
     toTargetDestStrategy->Move(this, dt);
@@ -83,6 +87,7 @@ void Drone::Update(double dt, std::vector<IEntity*> scheduler) {
         toTargetDestStrategy = NULL;
         available = true;
         nearestEntity = NULL;
+        std::cout << "Drone dropped robot off at destination (trip complete)" << std::endl << std::endl;
     }
   }  
 }
