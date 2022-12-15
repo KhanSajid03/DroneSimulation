@@ -8,9 +8,15 @@
 
 class BatteryDroneDecorator : public BaseDroneDecorator {
  public:
+  /**
+   * Constructor for BatteryDroneDecorator
+   * 
+   */
   BatteryDroneDecorator(Drone* drone) : BaseDroneDecorator(drone) {}
-  // TODO: destructor??
-
+  /**
+   * Destructor for BatteryDroneDecorator
+   * 
+   */
   ~BatteryDroneDecorator();
 
   void Update(double dt, std::vector<IEntity*> scheduler, std::vector<IEntity*> stations);
