@@ -24,7 +24,9 @@ class BatteryDroneDecorator : public BaseDroneDecorator {
 
  protected:
   float batteryLevel = 50.0;
-  float BATTERY_RATE = 0.25;
+  const float BATTERY_RATE = 0.25;
+  const float BATTERY_CHARGING_RATE = 10.0;
+  const float BATTERY_BUFFER_ZONE = 25.0;
   IEntity* nearestRechargeStation;
   bool onRechargeMission = false;
 
