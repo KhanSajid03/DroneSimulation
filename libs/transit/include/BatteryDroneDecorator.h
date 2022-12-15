@@ -13,13 +13,10 @@ class BatteryDroneDecorator : public BaseDroneDecorator {
 
   ~BatteryDroneDecorator();
 
-  void CalculateBatteryLevel(); // calculating the battery level based on the distance required to complete the trip
-
   void Update(double dt, std::vector<IEntity*> scheduler, std::vector<IEntity*> stations);
   void GetNearestEntity(std::vector<IEntity*> scheduler, std::vector<IEntity*> stations);
   void GetNearestRechargeStation(std::vector<IEntity*> stations);
   bool hasEnoughBatteryForDist(float dist);
-
   bool IsBatteryDrone() override { return true; }
 
  protected:
