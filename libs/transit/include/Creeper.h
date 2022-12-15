@@ -87,7 +87,7 @@ class Creeper : public IEntity {
    * 
    * @param entites list of entity objects
    */
-  void FindDrone(std::vector<IEntity*> scheduler);
+  void FindDrone(std::vector<IEntity*> entities);
 
   /**
    * Updates creeper object such that it beelines toward the drone's position
@@ -95,7 +95,7 @@ class Creeper : public IEntity {
    * @param dt time differential of update
    * @param entites list of entity objects
    */
-  void Update(double dt, std::vector<IEntity*> scheduler);
+  void Update(double dt, std::vector<IEntity*> entities);
 
   /**
    * Check if entity is creeper, returns true in this case

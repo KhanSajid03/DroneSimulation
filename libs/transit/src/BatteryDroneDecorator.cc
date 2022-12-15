@@ -14,7 +14,7 @@ void BatteryDroneDecorator::Update(double dt, std::vector<IEntity*> scheduler, s
 
   if (onRechargeMission) { 
     if (drone->GetPosition().Distance(nearestRechargeStation->GetPosition()) < 50.0) {
-      batteryLevel += 10.0 * dt;
+      batteryLevel += 10.0 * dt; // charging rate.. 
     }  // TODO: change this from literal float values to constants
     if (batteryLevel >= 95.0) {
       std::cout << "Battery charged to " << batteryLevel << std::endl;

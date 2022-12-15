@@ -30,10 +30,10 @@ void Creeper::FindDrone(std::vector<IEntity*> entities) {
 
 
 // TODO: scheduler only contains robots
-void Creeper::Update(double dt, std::vector<IEntity*> scheduler) {
+void Creeper::Update(double dt, std::vector<IEntity*> entities) {
 
   if(!followingDrone) {
-    FindDrone(scheduler);
+    FindDrone(entities);
   } else {
 
     if (!drone) {
