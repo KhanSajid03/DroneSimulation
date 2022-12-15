@@ -1,7 +1,6 @@
 #include "SimulationModel.h"
 #include "DroneFactory.h"
 #include "RobotFactory.h"
-#include "CreeperFactory.h"
 #include "HelicopterFactory.h"
 #include "CarFactory.h"
 #include "RechargeStationFactory.h"
