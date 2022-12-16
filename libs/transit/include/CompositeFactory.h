@@ -12,7 +12,7 @@ class CompositeFactory : public IEntityFactory {
     * @param entity Json Object containing configuration details
     * @return return an IEntity* object
     */
-    IEntity* CreateEntity(JsonObject& entity);
+    IEntity* CreateEntity(const JsonObject& entity);
     /**
     * @brief Functionality to add factory
     * @param factoryEntity IEntityFactory* Object containing configuration details

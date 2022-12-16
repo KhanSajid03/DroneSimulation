@@ -1,6 +1,6 @@
 
-#ifndef RECHARGE_STATION_H_
-#define RECHARGE_STATION_H_
+#ifndef LIBS_TRANSIT_INCLUDE_RECHARGESTATION_H_
+#define LIBS_TRANSIT_INCLUDE_RECHARGESTATION_H_
 
 #include <vector>
 
@@ -17,7 +17,7 @@ class RechargeStation : public IEntity {
    * @brief Constructor.
    * @param obj JsonObject containing specifications.
    */
-  RechargeStation(JsonObject& obj);
+  RechargeStation(const JsonObject& obj);
   /**
    * @brief Destructor.
    */
@@ -86,5 +86,5 @@ class RechargeStation : public IEntity {
   bool available;
 };
 
-#endif
+#endif  // LIBS_TRANSIT_INCLUDE_RECHARGESTATION_H_
 

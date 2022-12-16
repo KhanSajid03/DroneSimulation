@@ -18,7 +18,7 @@ class SimulationModel {
  public:
   /**
    * @brief constructor
-   * @param controller
+   * @param controller Controller
    */
   SimulationModel(IController& controller);
   /**
@@ -30,12 +30,12 @@ class SimulationModel {
    * @brief Creates an simulation entity
    * @param entity
    */
-  void CreateEntity(JsonObject& entity);
+  void CreateEntity(const JsonObject& entity);
   /**
    * @brief Schedules a trip for an object in the scene
    * @param details
    */
-  void ScheduleTrip(JsonObject& details);
+  void ScheduleTrip(const JsonObject& details);
   /**
    * @brief Updates the simulation
    * @param dt

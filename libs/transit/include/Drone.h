@@ -19,7 +19,7 @@ class Drone : public IEntity {
    * @brief Constructor, creates Drone object
    * @param obj Json Object containing configuration details for Drone
    */
-  Drone(JsonObject& obj);
+  Drone(const JsonObject& obj);
   /**
    * @brief Destructor
    */

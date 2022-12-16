@@ -7,7 +7,7 @@
 #include <cmath>
 #include <limits>
 
-Helicopter::Helicopter(JsonObject& obj) : details(obj) {
+Helicopter::Helicopter(const JsonObject& obj) : details(obj) {
   JsonArray pos(obj["position"]);
   position = {pos[0], pos[1], pos[2]};
 

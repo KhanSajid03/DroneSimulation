@@ -23,6 +23,6 @@ class CarFactory : public IEntityFactory {
      * @param entity Json Object containing details for the car 
      * @return car object configured as per entity Json Object
      */
-    IEntity* CreateEntity(JsonObject& entity);
+    IEntity* CreateEntity(const JsonObject& entity);
 };
 #endif  // LIBS_TRANSIT_INCLUDE_CARFACTORY_H_

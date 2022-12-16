@@ -1,5 +1,5 @@
-#ifndef RECHARGE_STATION_FACTORY_H_
-#define RECHARGE_STATION_FACTORY_H_
+#ifndef LIBS_TRANSIT_INCLUDE_RECHARGESTATIONFACTORY_H_
+#define LIBS_TRANSIT_INCLUDE_RECHARGESTATIONFACTORY_H_
 
 #include "IEntity.h"
 #include "IEntityFactory.h"
@@ -21,7 +21,7 @@ class RechargeStationFactory : public IEntityFactory {
      * @param entity Json Object containing details for the RechargeStation.
      * @return RechargeStation object configured as per entity Json Object
      */
-    IEntity* CreateEntity(JsonObject& entity);
+    IEntity* CreateEntity(const JsonObject& entity);
 };
 
-#endif
+#endif  // LIBS_TRANSIT_INCLUDE_RECHARGESTATIONFACTORY_H_

@@ -16,7 +16,7 @@ SimulationModel::SimulationModel(IController& controller)
   AddFactory(new RechargeStationFactory());
 }
 
-void SimulationModel::CreateEntity(JsonObject& entity) {
+void SimulationModel::CreateEntity(const JsonObject& entity) {
   std::string type = entity["type"];
   std::string name = entity["name"];
   JsonArray position = entity["position"];
@@ -35,7 +35,7 @@ void SimulationModel::CreateEntity(JsonObject& entity) {
 }
 
 /// Schedules a trip for an object in the scene
-void SimulationModel::ScheduleTrip(JsonObject& details) {
+void SimulationModel::ScheduleTrip(const JsonObject& details) {
   std::string name = details["name"];
   JsonArray start = details["start"];
   JsonArray end = details["end"];

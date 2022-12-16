@@ -1,5 +1,5 @@
-#ifndef BATTERY_DECORATOR_H_
-#define BATTERY_DECORATOR_H_
+#ifndef LIBS_TRANSIT_INCLUDE_BATTERYDRONEDECORATOR_H_
+#define LIBS_TRANSIT_INCLUDE_BATTERYDRONEDECORATOR_H_
 
 #include <vector>
 
@@ -25,13 +25,15 @@ class BatteryDroneDecorator : public BaseDroneDecorator {
    * @param scheduler Vector of all robot objects.
    * @param stations Vector of all recharge station objects.
    */
-  void Update(double dt, std::vector<IEntity*> scheduler, std::vector<IEntity*> stations);
+  void Update(double dt, std::vector<IEntity*> scheduler,
+  std::vector<IEntity*> stations);
   /**
    * @brief Wrapper for drone GetNearestEntity function. Finds nearest robot entity.
    * @param scheduler Vector of all robots.
    * @param stations Vector of stations.
    */
-  void GetNearestEntity(std::vector<IEntity*> scheduler, std::vector<IEntity*> stations);
+  void GetNearestEntity(std::vector<IEntity*> scheduler,
+  std::vector<IEntity*> stations);
   /**
    * @brief Finds nearest recharge station.
    * @param stations Vector of all recharge station objects.
@@ -56,10 +58,9 @@ class BatteryDroneDecorator : public BaseDroneDecorator {
   const float BATTERY_BUFFER_ZONE = 25.0;
   IEntity* nearestRechargeStation;
   bool onRechargeMission = false;
-
   Vector3 targetPos;
   IStrategy* toTargetPosStrategy = NULL;
   IStrategy* toTargetDestStrategy = NULL;
-};  
+};
 
-#endif  // BATTERY_DECORATOR_H_
+#endif  // LIBS_TRANSIT_INCLUDE_BATTERYDRONEDECORATOR_H_

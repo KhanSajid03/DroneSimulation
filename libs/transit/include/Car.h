@@ -15,7 +15,7 @@ class Car : public IEntity {
    * @brief Constructor, creates Car object
    * @param obj Json Object containing configuration details for Car
    */
-  Car(JsonObject& obj);
+  Car(const JsonObject& obj);
 
   /**
    * @brief Destructor

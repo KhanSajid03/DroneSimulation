@@ -1,6 +1,6 @@
 #include "HelicopterFactory.h"
 
-IEntity* HelicopterFactory::CreateEntity(JsonObject& entity) {
+IEntity* HelicopterFactory::CreateEntity(const JsonObject& entity) {
   std::string type = entity["type"];
   if (type.compare("helicopter") == 0) {
     std::cout << "Helicopter Created" << std::endl;

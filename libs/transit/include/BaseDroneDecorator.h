@@ -1,5 +1,5 @@
-#ifndef BASE_DRONE_DECORATOR_H_
-#define BASE_DRONE_DECORATOR_H_
+#ifndef LIBS_TRANSIT_INCLUDE_BASEDRONEDECORATOR_H_
+#define LIBS_TRANSIT_INCLUDE_BASEDRONEDECORATOR_H_
 
 #include <vector>
 
@@ -64,10 +64,11 @@ class BaseDroneDecorator : public IEntity {
    * @brief Setter for graph
    * @param graph IGraph* graph value
    */
-  virtual void SetGraph(const IGraph* graph) override { this->graph = graph; drone->SetGraph(graph); }
+  void SetGraph(const IGraph* graph) override
+  { this->graph = graph; drone->SetGraph(graph); }
 
  protected:
     Drone* drone = NULL;
-}; 
+};
 
-#endif  // BATTERY_DECORATOR_H_
+#endif  // LIBS_TRANSIT_INCLUDE_BASEDRONEDECORATOR_H_

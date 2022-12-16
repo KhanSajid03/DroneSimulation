@@ -24,7 +24,7 @@ class DroneFactory : public IEntityFactory {
      * @param entity Json Object containing details for the drone 
      * @return drone object configured as per entity Json Object
      */
-    IEntity* CreateEntity(JsonObject& entity);
+    IEntity* CreateEntity(const JsonObject& entity);
 };
 
 #endif  // LIBS_TRANSIT_INCLUDE_DRONEFACTORY_H_

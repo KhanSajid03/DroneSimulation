@@ -20,7 +20,7 @@ class Helicopter : public IEntity {
    * 
    * @param obj Json Object containing configuration details for Helicopter
    */
-  Helicopter(JsonObject& obj);
+  Helicopter(const JsonObject& obj);
 
   /**
    * @brief Destructor for Helicopter

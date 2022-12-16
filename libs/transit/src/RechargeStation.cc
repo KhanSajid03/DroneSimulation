@@ -10,7 +10,7 @@
 #include <cmath>
 #include <limits>
 
-RechargeStation::RechargeStation(JsonObject& obj) : details(obj) {
+RechargeStation::RechargeStation(const JsonObject& obj) : details(obj) {
   JsonArray pos(obj["position"]);
   position = {pos[0], pos[1], pos[2]};
 

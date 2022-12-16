@@ -1,11 +1,9 @@
-#ifndef Vector3_H_
-#define Vector3_H_
+#ifndef LIBS_TRANSIT_INCLUDE_MATH_VECTOR3_H_
+#define LIBS_TRANSIT_INCLUDE_MATH_VECTOR3_H_
 
 #include <cmath>
 #include <iostream>
 #include <vector>
-
-
 
 /// @brief A class built solely to handle 3D vector mathematics.
 class Vector3 {
@@ -141,9 +139,8 @@ class Vector3 {
     result.push_back(x);
     result.push_back(y);
     result.push_back(z);
- 
     return result;
   }
 };
 
-#endif  // Vector3_H_
+#endif  // LIBS_TRANSIT_INCLUDE_MATH_VECTOR3_H_

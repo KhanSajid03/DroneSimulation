@@ -12,18 +12,15 @@
 class IEntityFactory {
  public:
     /**
-    * 
     * @brief virtual destructor
-    * 
     */
     virtual ~IEntityFactory() {}
      /**
      * @brief Creates and returns a new entity object
-     * 
      * @param entity Json Object containing details for the entity.
      * @return entity object configured as per entity Json Object
      */
-    virtual IEntity* CreateEntity(JsonObject& entity) = 0;
+    virtual IEntity* CreateEntity(const JsonObject& entity) = 0;
 };
 
 #endif  // LIBS_TRANSIT_INCLUDE_IENTITYFACTORY_H_

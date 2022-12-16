@@ -1,7 +1,7 @@
 #include "CompositeFactory.h"
 #include "IEntity.h"
 
-IEntity* CompositeFactory::CreateEntity(JsonObject& entity) {
+IEntity* CompositeFactory::CreateEntity(const JsonObject& entity) {
   for (int i = 0; i < componentFactories.size(); i++) {
     IEntity* createdEntity = componentFactories.at(i)->CreateEntity(entity);
     if (createdEntity != nullptr) {

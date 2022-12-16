@@ -15,7 +15,7 @@ class Robot : public IEntity {
    * @brief Constructor
    * @param obj JsonObject
    */
-  Robot(JsonObject& obj);
+  Robot(const JsonObject& obj);
   /**
    * @brief Virtual Destructor
    */
