@@ -1,0 +1,83 @@
+\hypertarget{classCarFactory}{}\doxysection{Car\+Factory Class Reference}
+\label{classCarFactory}\index{CarFactory@{CarFactory}}
+
+
+This class serves as a factory for the \mbox{\hyperlink{classCar}{Car}} class.  
+
+
+
+
+{\ttfamily \#include $<$Car\+Factory.\+h$>$}
+
+
+
+Inheritance diagram for Car\+Factory\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=164pt]{classCarFactory__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Car\+Factory\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=164pt]{classCarFactory__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classCarFactory_a656b3d38547a60f915af5ceb12895f12}{$\sim$\+Car\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em virtual destructor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ \mbox{\hyperlink{classCarFactory_af4ff6884dda8d2aa6f5ae197dd512666}{Create\+Entity}} (const Json\+Object \&entity)
+\begin{DoxyCompactList}\small\item\em Creates and returns a new car object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class serves as a factory for the \mbox{\hyperlink{classCar}{Car}} class. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCarFactory_a656b3d38547a60f915af5ceb12895f12}\label{classCarFactory_a656b3d38547a60f915af5ceb12895f12}} 
+\index{CarFactory@{CarFactory}!````~CarFactory@{$\sim$CarFactory}}
+\index{````~CarFactory@{$\sim$CarFactory}!CarFactory@{CarFactory}}
+\doxysubsubsection{\texorpdfstring{$\sim$CarFactory()}{~CarFactory()}}
+{\footnotesize\ttfamily virtual Car\+Factory\+::$\sim$\+Car\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+virtual destructor 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCarFactory_af4ff6884dda8d2aa6f5ae197dd512666}\label{classCarFactory_af4ff6884dda8d2aa6f5ae197dd512666}} 
+\index{CarFactory@{CarFactory}!CreateEntity@{CreateEntity}}
+\index{CreateEntity@{CreateEntity}!CarFactory@{CarFactory}}
+\doxysubsubsection{\texorpdfstring{CreateEntity()}{CreateEntity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ Car\+Factory\+::\+Create\+Entity (\begin{DoxyParamCaption}\item[{const Json\+Object \&}]{entity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates and returns a new car object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & Json Object containing details for the car \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+car object configured as per entity Json Object 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntityFactory_ab28e669d7f78ce426620fa4e472f3adb}{I\+Entity\+Factory}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/balas095/csci-\/3081w-\/f22/hw4/\+Team-\/001-\/4-\/homework04/libs/transit/include/Car\+Factory.\+h\item 
+/home/balas095/csci-\/3081w-\/f22/hw4/\+Team-\/001-\/4-\/homework04/libs/transit/src/Car\+Factory.\+cc\end{DoxyCompactItemize}

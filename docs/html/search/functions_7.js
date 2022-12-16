@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['removeentity_86',['RemoveEntity',['../classIController.html#a35b431eb8e01216df8b33fa3f4c2b25c',1,'IController']]],
-  ['removepath_87',['RemovePath',['../classIController.html#a23bf74a0e1672c6daba1674137759f55',1,'IController']]]
+  ['jump_156',['Jump',['../classDrone.html#a1559fe24a5792ac72ba9d8a4a13a9ec8',1,'Drone::Jump()'],['../classIEntity.html#a4e8eb64a324e1196be039c5e2a293b7a',1,'IEntity::Jump()']]],
+  ['jumpdecorator_157',['JumpDecorator',['../classJumpDecorator.html#a0e488a121d506f294d2ed4b90108e10f',1,'JumpDecorator']]]
 ];

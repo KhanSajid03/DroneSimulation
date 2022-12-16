@@ -8,9 +8,9 @@
 #include "IStrategy.h"
 #include "math/vector3.h"
 
-// Represents a RechargeStation in a physical system.
-// RechargeStations move using euler integration based on a specified
-// velocity and direction.
+/**
+ * @brief Represents a RechargeStation in a physical system.
+ */
 class RechargeStation : public IEntity {
  public:
   /**

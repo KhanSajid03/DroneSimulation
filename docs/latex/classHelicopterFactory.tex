@@ -1,0 +1,83 @@
+\hypertarget{classHelicopterFactory}{}\doxysection{Helicopter\+Factory Class Reference}
+\label{classHelicopterFactory}\index{HelicopterFactory@{HelicopterFactory}}
+
+
+This class serves as a factory for the \mbox{\hyperlink{classHelicopter}{Helicopter}} class.  
+
+
+
+
+{\ttfamily \#include $<$Helicopter\+Factory.\+h$>$}
+
+
+
+Inheritance diagram for Helicopter\+Factory\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=183pt]{classHelicopterFactory__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Helicopter\+Factory\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=183pt]{classHelicopterFactory__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classHelicopterFactory_ac00bcc2c2d190f5d7b199840b94588ee}{$\sim$\+Helicopter\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em virtual destructor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ \mbox{\hyperlink{classHelicopterFactory_ac39e8000650e45f174e10e34644c23df}{Create\+Entity}} (const Json\+Object \&entity)
+\begin{DoxyCompactList}\small\item\em Creates and returns a new helicopter object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class serves as a factory for the \mbox{\hyperlink{classHelicopter}{Helicopter}} class. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classHelicopterFactory_ac00bcc2c2d190f5d7b199840b94588ee}\label{classHelicopterFactory_ac00bcc2c2d190f5d7b199840b94588ee}} 
+\index{HelicopterFactory@{HelicopterFactory}!````~HelicopterFactory@{$\sim$HelicopterFactory}}
+\index{````~HelicopterFactory@{$\sim$HelicopterFactory}!HelicopterFactory@{HelicopterFactory}}
+\doxysubsubsection{\texorpdfstring{$\sim$HelicopterFactory()}{~HelicopterFactory()}}
+{\footnotesize\ttfamily virtual Helicopter\+Factory\+::$\sim$\+Helicopter\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+virtual destructor 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classHelicopterFactory_ac39e8000650e45f174e10e34644c23df}\label{classHelicopterFactory_ac39e8000650e45f174e10e34644c23df}} 
+\index{HelicopterFactory@{HelicopterFactory}!CreateEntity@{CreateEntity}}
+\index{CreateEntity@{CreateEntity}!HelicopterFactory@{HelicopterFactory}}
+\doxysubsubsection{\texorpdfstring{CreateEntity()}{CreateEntity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ Helicopter\+Factory\+::\+Create\+Entity (\begin{DoxyParamCaption}\item[{const Json\+Object \&}]{entity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates and returns a new helicopter object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & Json Object containing details for the helicopter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+helicopter object configured as per entity Json Object 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntityFactory_ab28e669d7f78ce426620fa4e472f3adb}{I\+Entity\+Factory}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/balas095/csci-\/3081w-\/f22/hw4/\+Team-\/001-\/4-\/homework04/libs/transit/include/Helicopter\+Factory.\+h\item 
+/home/balas095/csci-\/3081w-\/f22/hw4/\+Team-\/001-\/4-\/homework04/libs/transit/src/Helicopter\+Factory.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,5 @@
+<map id="BaseDroneDecorator" name="BaseDroneDecorator">
+<area shape="rect" id="node1" title="Base Class for Decorator wrappers on drone objects." alt="" coords="5,171,163,197"/>
+<area shape="rect" id="node2" href="$classIEntity.html" title="Abstract controller class used in Transit Service." alt="" coords="47,5,111,32"/>
+<area shape="rect" id="node3" href="$classDrone.html" title="this class inhertis from the IEntity class and is responsible for creating functionality for the dron..." alt="" coords="100,81,161,108"/>
+</map>

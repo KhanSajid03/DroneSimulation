@@ -1,0 +1,251 @@
+\hypertarget{classBaseDroneDecorator}{}\doxysection{Base\+Drone\+Decorator Class Reference}
+\label{classBaseDroneDecorator}\index{BaseDroneDecorator@{BaseDroneDecorator}}
+
+
+Base Class for Decorator wrappers on drone objects.  
+
+
+
+
+{\ttfamily \#include $<$Base\+Drone\+Decorator.\+h$>$}
+
+
+
+Inheritance diagram for Base\+Drone\+Decorator\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{classBaseDroneDecorator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Base\+Drone\+Decorator\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{classBaseDroneDecorator__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBaseDroneDecorator_a593e2bc7762f8887395b3befaf68a586}\label{classBaseDroneDecorator_a593e2bc7762f8887395b3befaf68a586}} 
+{\bfseries Base\+Drone\+Decorator} (\mbox{\hyperlink{classDrone}{Drone}} $\ast$drone)
+\item 
+virtual float \mbox{\hyperlink{classBaseDroneDecorator_ae54458fb48da8b187efb66b4c4fe534e}{Get\+Speed}} () const
+\begin{DoxyCompactList}\small\item\em Getter for drone\textquotesingle{}s speed. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classVector3}{Vector3}} \mbox{\hyperlink{classBaseDroneDecorator_abb415c5073ce8d869a76077db1549e1b}{Get\+Position}} () const
+\begin{DoxyCompactList}\small\item\em Getter for drone\textquotesingle{}s position. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classVector3}{Vector3}} \mbox{\hyperlink{classBaseDroneDecorator_aa3e3bfe520f5192fe6e9950215337ae6}{Get\+Direction}} () const
+\begin{DoxyCompactList}\small\item\em Getter for drone\textquotesingle{}s direction. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classVector3}{Vector3}} \mbox{\hyperlink{classBaseDroneDecorator_a13f81703e93bba1af94982246fbb5312}{Get\+Destination}} () const
+\begin{DoxyCompactList}\small\item\em Getter for drone\textquotesingle{}s destination. \end{DoxyCompactList}\item 
+virtual Json\+Object \mbox{\hyperlink{classBaseDroneDecorator_ac0d5f1a838f03ebab3048be3f68b3b87}{Get\+Details}} () const
+\begin{DoxyCompactList}\small\item\em Getter for drone\textquotesingle{}s Json\+Object. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classBaseDroneDecorator_a6ab99ed234537003dd34ef5444138360}{Get\+Availability}} () const
+\begin{DoxyCompactList}\small\item\em Getter for drone\textquotesingle{}s availability. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classBaseDroneDecorator_ad39c65fc7de73ec6e3c1cac1aa8ff608}{Set\+Position}} (\mbox{\hyperlink{classVector3}{Vector3}} pos\+\_\+)
+\begin{DoxyCompactList}\small\item\em Setter for drone\textquotesingle{}s position. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classBaseDroneDecorator_ab60a21303749a78b8ec9073e8dd176c4}{Set\+Direction}} (\mbox{\hyperlink{classVector3}{Vector3}} dir\+\_\+)
+\begin{DoxyCompactList}\small\item\em Setter for drone\textquotesingle{}s direction. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classBaseDroneDecorator_afa355307a823715583b0155b7eb1ac4a}{Set\+Destination}} (\mbox{\hyperlink{classVector3}{Vector3}} des\+\_\+)
+\begin{DoxyCompactList}\small\item\em Setter for drone\textquotesingle{}s destination. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBaseDroneDecorator_ace1bce66a4b546bcc16b3a924d2c574b}{Set\+Graph}} (const I\+Graph $\ast$graph) override
+\begin{DoxyCompactList}\small\item\em Setter for graph. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBaseDroneDecorator_a36ce26dff8fdf29146e50bc63e764d59}\label{classBaseDroneDecorator_a36ce26dff8fdf29146e50bc63e764d59}} 
+\mbox{\hyperlink{classDrone}{Drone}} $\ast$ {\bfseries drone} = N\+U\+LL
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base Class for Decorator wrappers on drone objects. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBaseDroneDecorator_a6ab99ed234537003dd34ef5444138360}\label{classBaseDroneDecorator_a6ab99ed234537003dd34ef5444138360}} 
+\index{BaseDroneDecorator@{BaseDroneDecorator}!GetAvailability@{GetAvailability}}
+\index{GetAvailability@{GetAvailability}!BaseDroneDecorator@{BaseDroneDecorator}}
+\doxysubsubsection{\texorpdfstring{GetAvailability()}{GetAvailability()}}
+{\footnotesize\ttfamily virtual bool Base\+Drone\+Decorator\+::\+Get\+Availability (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Getter for drone\textquotesingle{}s availability. 
+
+\begin{DoxyReturn}{Returns}
+true if drone is available, false otherwise 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_a90348881691a37d5c3d63265ed3463b1}{I\+Entity}}.
+
+\mbox{\Hypertarget{classBaseDroneDecorator_a13f81703e93bba1af94982246fbb5312}\label{classBaseDroneDecorator_a13f81703e93bba1af94982246fbb5312}} 
+\index{BaseDroneDecorator@{BaseDroneDecorator}!GetDestination@{GetDestination}}
+\index{GetDestination@{GetDestination}!BaseDroneDecorator@{BaseDroneDecorator}}
+\doxysubsubsection{\texorpdfstring{GetDestination()}{GetDestination()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classVector3}{Vector3}} Base\+Drone\+Decorator\+::\+Get\+Destination (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Getter for drone\textquotesingle{}s destination. 
+
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classVector3}{Vector3}} destination value 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity_a0dcaf865938ab1fb49c8389b5e580d90}{I\+Entity}}.
+
+\mbox{\Hypertarget{classBaseDroneDecorator_ac0d5f1a838f03ebab3048be3f68b3b87}\label{classBaseDroneDecorator_ac0d5f1a838f03ebab3048be3f68b3b87}} 
+\index{BaseDroneDecorator@{BaseDroneDecorator}!GetDetails@{GetDetails}}
+\index{GetDetails@{GetDetails}!BaseDroneDecorator@{BaseDroneDecorator}}
+\doxysubsubsection{\texorpdfstring{GetDetails()}{GetDetails()}}
+{\footnotesize\ttfamily virtual Json\+Object Base\+Drone\+Decorator\+::\+Get\+Details (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Getter for drone\textquotesingle{}s Json\+Object. 
+
+\begin{DoxyReturn}{Returns}
+the details Json\+Object 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity_a97c799400ce05e2ff2566adc4d7b9634}{I\+Entity}}.
+
+\mbox{\Hypertarget{classBaseDroneDecorator_aa3e3bfe520f5192fe6e9950215337ae6}\label{classBaseDroneDecorator_aa3e3bfe520f5192fe6e9950215337ae6}} 
+\index{BaseDroneDecorator@{BaseDroneDecorator}!GetDirection@{GetDirection}}
+\index{GetDirection@{GetDirection}!BaseDroneDecorator@{BaseDroneDecorator}}
+\doxysubsubsection{\texorpdfstring{GetDirection()}{GetDirection()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classVector3}{Vector3}} Base\+Drone\+Decorator\+::\+Get\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Getter for drone\textquotesingle{}s direction. 
+
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classVector3}{Vector3}} direction value 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity_aa99a8fef8b22195a5113c38ef51f086d}{I\+Entity}}.
+
+\mbox{\Hypertarget{classBaseDroneDecorator_abb415c5073ce8d869a76077db1549e1b}\label{classBaseDroneDecorator_abb415c5073ce8d869a76077db1549e1b}} 
+\index{BaseDroneDecorator@{BaseDroneDecorator}!GetPosition@{GetPosition}}
+\index{GetPosition@{GetPosition}!BaseDroneDecorator@{BaseDroneDecorator}}
+\doxysubsubsection{\texorpdfstring{GetPosition()}{GetPosition()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classVector3}{Vector3}} Base\+Drone\+Decorator\+::\+Get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Getter for drone\textquotesingle{}s position. 
+
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classVector3}{Vector3}} position value 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity_a9bc32587aab91761fc0e718612498199}{I\+Entity}}.
+
+\mbox{\Hypertarget{classBaseDroneDecorator_ae54458fb48da8b187efb66b4c4fe534e}\label{classBaseDroneDecorator_ae54458fb48da8b187efb66b4c4fe534e}} 
+\index{BaseDroneDecorator@{BaseDroneDecorator}!GetSpeed@{GetSpeed}}
+\index{GetSpeed@{GetSpeed}!BaseDroneDecorator@{BaseDroneDecorator}}
+\doxysubsubsection{\texorpdfstring{GetSpeed()}{GetSpeed()}}
+{\footnotesize\ttfamily virtual float Base\+Drone\+Decorator\+::\+Get\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Getter for drone\textquotesingle{}s speed. 
+
+\begin{DoxyReturn}{Returns}
+the float speed value 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity_a6520d2b1dc71d092bab38ef9f5cc9ff4}{I\+Entity}}.
+
+\mbox{\Hypertarget{classBaseDroneDecorator_afa355307a823715583b0155b7eb1ac4a}\label{classBaseDroneDecorator_afa355307a823715583b0155b7eb1ac4a}} 
+\index{BaseDroneDecorator@{BaseDroneDecorator}!SetDestination@{SetDestination}}
+\index{SetDestination@{SetDestination}!BaseDroneDecorator@{BaseDroneDecorator}}
+\doxysubsubsection{\texorpdfstring{SetDestination()}{SetDestination()}}
+{\footnotesize\ttfamily virtual void Base\+Drone\+Decorator\+::\+Set\+Destination (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVector3}{Vector3}}}]{des\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Setter for drone\textquotesingle{}s destination. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em des\+\_\+} & new destination \mbox{\hyperlink{classVector3}{Vector3}} value \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_aa473000823f673e9d7b89aed3cd3fc5c}{I\+Entity}}.
+
+\mbox{\Hypertarget{classBaseDroneDecorator_ab60a21303749a78b8ec9073e8dd176c4}\label{classBaseDroneDecorator_ab60a21303749a78b8ec9073e8dd176c4}} 
+\index{BaseDroneDecorator@{BaseDroneDecorator}!SetDirection@{SetDirection}}
+\index{SetDirection@{SetDirection}!BaseDroneDecorator@{BaseDroneDecorator}}
+\doxysubsubsection{\texorpdfstring{SetDirection()}{SetDirection()}}
+{\footnotesize\ttfamily virtual void Base\+Drone\+Decorator\+::\+Set\+Direction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVector3}{Vector3}}}]{dir\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Setter for drone\textquotesingle{}s direction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir\+\_\+} & new direction \mbox{\hyperlink{classVector3}{Vector3}} value \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_a64bfaa448a929ca71693ff3e2edb9d97}{I\+Entity}}.
+
+\mbox{\Hypertarget{classBaseDroneDecorator_ace1bce66a4b546bcc16b3a924d2c574b}\label{classBaseDroneDecorator_ace1bce66a4b546bcc16b3a924d2c574b}} 
+\index{BaseDroneDecorator@{BaseDroneDecorator}!SetGraph@{SetGraph}}
+\index{SetGraph@{SetGraph}!BaseDroneDecorator@{BaseDroneDecorator}}
+\doxysubsubsection{\texorpdfstring{SetGraph()}{SetGraph()}}
+{\footnotesize\ttfamily void Base\+Drone\+Decorator\+::\+Set\+Graph (\begin{DoxyParamCaption}\item[{const I\+Graph $\ast$}]{graph }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Setter for graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & I\+Graph$\ast$ graph value \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_a50b01c5c4fab1632c0289e30aa77faf2}{I\+Entity}}.
+
+\mbox{\Hypertarget{classBaseDroneDecorator_ad39c65fc7de73ec6e3c1cac1aa8ff608}\label{classBaseDroneDecorator_ad39c65fc7de73ec6e3c1cac1aa8ff608}} 
+\index{BaseDroneDecorator@{BaseDroneDecorator}!SetPosition@{SetPosition}}
+\index{SetPosition@{SetPosition}!BaseDroneDecorator@{BaseDroneDecorator}}
+\doxysubsubsection{\texorpdfstring{SetPosition()}{SetPosition()}}
+{\footnotesize\ttfamily virtual void Base\+Drone\+Decorator\+::\+Set\+Position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVector3}{Vector3}}}]{pos\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Setter for drone\textquotesingle{}s position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos\+\_\+} & new position \mbox{\hyperlink{classVector3}{Vector3}} value \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_af0475048b09dc13ed6cf8e7c7be2ae6b}{I\+Entity}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/balas095/csci-\/3081w-\/f22/hw4/\+Team-\/001-\/4-\/homework04/libs/transit/include/Base\+Drone\+Decorator.\+h\item 
+/home/balas095/csci-\/3081w-\/f22/hw4/\+Team-\/001-\/4-\/homework04/libs/transit/src/Base\+Drone\+Decorator.\+cc\end{DoxyCompactItemize}

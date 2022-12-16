@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['simulationmodel_66',['SimulationModel',['../classSimulationModel.html',1,'']]],
-  ['spindecorator_67',['SpinDecorator',['../classSpinDecorator.html',1,'']]]
+  ['rechargestation_116',['RechargeStation',['../classRechargeStation.html',1,'']]],
+  ['rechargestationfactory_117',['RechargeStationFactory',['../classRechargeStationFactory.html',1,'']]],
+  ['robot_118',['Robot',['../classRobot.html',1,'']]],
+  ['robotfactory_119',['RobotFactory',['../classRobotFactory.html',1,'']]]
 ];

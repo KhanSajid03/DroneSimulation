@@ -2,6 +2,15 @@
 \label{classCompositeFactory}\index{CompositeFactory@{CompositeFactory}}
 
 
+This class serves as a factory to create entities.  
+
+
+
+
+{\ttfamily \#include $<$Composite\+Factory.\+h$>$}
+
+
+
 Inheritance diagram for Composite\+Factory\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -21,15 +30,59 @@ Collaboration diagram for Composite\+Factory\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classCompositeFactory_a46a24b2fa2e5c077bd140b7075f61ff9}\label{classCompositeFactory_a46a24b2fa2e5c077bd140b7075f61ff9}} 
-\mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ {\bfseries Create\+Entity} (Json\+Object \&entity)
-\item 
+\mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ \mbox{\hyperlink{classCompositeFactory_a506147ed95731efad950b572993b30f6}{Create\+Entity}} (const Json\+Object \&entity)
+\begin{DoxyCompactList}\small\item\em Functionality to create entity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCompositeFactory_a1e9833480826a2661f293d7e2d6358d5}{Add\+Factory}} (\mbox{\hyperlink{classIEntityFactory}{I\+Entity\+Factory}} $\ast$factory\+Entity)
+\begin{DoxyCompactList}\small\item\em Functionality to add factory. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classCompositeFactory_a5601892e2e4dd1ab9f9ab9316be1cd10}\label{classCompositeFactory_a5601892e2e4dd1ab9f9ab9316be1cd10}} 
+virtual \mbox{\hyperlink{classCompositeFactory_a5601892e2e4dd1ab9f9ab9316be1cd10}{$\sim$\+Composite\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em virtual destructor \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class serves as a factory to create entities. 
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classCompositeFactory_a1e9833480826a2661f293d7e2d6358d5}\label{classCompositeFactory_a1e9833480826a2661f293d7e2d6358d5}} 
-void {\bfseries Add\+Factory} (\mbox{\hyperlink{classIEntityFactory}{I\+Entity\+Factory}} $\ast$factory\+Entity)
-\end{DoxyCompactItemize}
+\index{CompositeFactory@{CompositeFactory}!AddFactory@{AddFactory}}
+\index{AddFactory@{AddFactory}!CompositeFactory@{CompositeFactory}}
+\doxysubsubsection{\texorpdfstring{AddFactory()}{AddFactory()}}
+{\footnotesize\ttfamily void Composite\+Factory\+::\+Add\+Factory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classIEntityFactory}{I\+Entity\+Factory}} $\ast$}]{factory\+Entity }\end{DoxyParamCaption})}
+
+
+
+Functionality to add factory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em factory\+Entity} & I\+Entity\+Factory$\ast$ Object containing configuration details \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCompositeFactory_a506147ed95731efad950b572993b30f6}\label{classCompositeFactory_a506147ed95731efad950b572993b30f6}} 
+\index{CompositeFactory@{CompositeFactory}!CreateEntity@{CreateEntity}}
+\index{CreateEntity@{CreateEntity}!CompositeFactory@{CompositeFactory}}
+\doxysubsubsection{\texorpdfstring{CreateEntity()}{CreateEntity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ Composite\+Factory\+::\+Create\+Entity (\begin{DoxyParamCaption}\item[{const Json\+Object \&}]{entity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Functionality to create entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & Json Object containing configuration details \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return an I\+Entity$\ast$ object 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntityFactory_ab28e669d7f78ce426620fa4e472f3adb}{I\+Entity\+Factory}}.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/home/balas095/csci-\/3081w-\/f22/lab10/\+Team-\/001-\/4-\/lab10/libs/transit/include/Composite\+Factory.\+h\item 
-/home/balas095/csci-\/3081w-\/f22/lab10/\+Team-\/001-\/4-\/lab10/libs/transit/src/Composite\+Factory.\+cc\end{DoxyCompactItemize}
+/home/balas095/csci-\/3081w-\/f22/hw4/\+Team-\/001-\/4-\/homework04/libs/transit/include/Composite\+Factory.\+h\item 
+/home/balas095/csci-\/3081w-\/f22/hw4/\+Team-\/001-\/4-\/homework04/libs/transit/src/Composite\+Factory.\+cc\end{DoxyCompactItemize}

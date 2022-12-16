@@ -2,6 +2,15 @@
 \label{classCelebrationDecorator}\index{CelebrationDecorator@{CelebrationDecorator}}
 
 
+This class serves as a decorator for the varous celebrations.  
+
+
+
+
+{\ttfamily \#include $<$Celebration\+Decorator.\+h$>$}
+
+
+
 Inheritance diagram for Celebration\+Decorator\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -21,15 +30,14 @@ Collaboration diagram for Celebration\+Decorator\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classCelebrationDecorator_af1ea3e7a231fe372c9fec0f7175dc724}\label{classCelebrationDecorator_af1ea3e7a231fe372c9fec0f7175dc724}} 
-{\bfseries Celebration\+Decorator} (\mbox{\hyperlink{classIStrategy}{I\+Strategy}} $\ast$strategy\+\_\+)
-\item 
-\mbox{\Hypertarget{classCelebrationDecorator_aaea8fd11f7d0e12dd79ccdc63ab1bbf6}\label{classCelebrationDecorator_aaea8fd11f7d0e12dd79ccdc63ab1bbf6}} 
-void {\bfseries Move} (\mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$entity, double dt)
-\item 
-\mbox{\Hypertarget{classCelebrationDecorator_a7ce83ef692d22773bf40e8733e20329a}\label{classCelebrationDecorator_a7ce83ef692d22773bf40e8733e20329a}} 
-bool {\bfseries Is\+Completed} ()
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classCelebrationDecorator_af1ea3e7a231fe372c9fec0f7175dc724}{Celebration\+Decorator}} (\mbox{\hyperlink{classIStrategy}{I\+Strategy}} $\ast$strategy\+\_\+)
+\begin{DoxyCompactList}\small\item\em Construct a new Celebration Decorator object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCelebrationDecorator_aaea8fd11f7d0e12dd79ccdc63ab1bbf6}{Move}} (\mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$entity, double dt)
+\begin{DoxyCompactList}\small\item\em moves the entity \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ float $>$ $>$ \mbox{\hyperlink{classCelebrationDecorator_ae93a079d6581a62c6025576052786a88}{Get\+Path}} () override
+\begin{DoxyCompactList}\small\item\em Gets the path of the strategy. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCelebrationDecorator_a7ce83ef692d22773bf40e8733e20329a}{Is\+Completed}} ()
+\begin{DoxyCompactList}\small\item\em returns a boolean on if the movement was completed or not \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -41,7 +49,94 @@ float {\bfseries time}
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+This class serves as a decorator for the varous celebrations. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCelebrationDecorator_af1ea3e7a231fe372c9fec0f7175dc724}\label{classCelebrationDecorator_af1ea3e7a231fe372c9fec0f7175dc724}} 
+\index{CelebrationDecorator@{CelebrationDecorator}!CelebrationDecorator@{CelebrationDecorator}}
+\index{CelebrationDecorator@{CelebrationDecorator}!CelebrationDecorator@{CelebrationDecorator}}
+\doxysubsubsection{\texorpdfstring{CelebrationDecorator()}{CelebrationDecorator()}}
+{\footnotesize\ttfamily Celebration\+Decorator\+::\+Celebration\+Decorator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classIStrategy}{I\+Strategy}} $\ast$}]{strategy\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new Celebration Decorator object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em strategy} & used \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCelebrationDecorator_ae93a079d6581a62c6025576052786a88}\label{classCelebrationDecorator_ae93a079d6581a62c6025576052786a88}} 
+\index{CelebrationDecorator@{CelebrationDecorator}!GetPath@{GetPath}}
+\index{GetPath@{GetPath}!CelebrationDecorator@{CelebrationDecorator}}
+\doxysubsubsection{\texorpdfstring{GetPath()}{GetPath()}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::vector$<$float$>$ $>$ Celebration\+Decorator\+::\+Get\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the path of the strategy. 
+
+\begin{DoxyReturn}{Returns}
+a vector of floats 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classIStrategy_a2ed65c71e8a9bb56203d92fa6ec3a3b9}{I\+Strategy}}.
+
+\mbox{\Hypertarget{classCelebrationDecorator_a7ce83ef692d22773bf40e8733e20329a}\label{classCelebrationDecorator_a7ce83ef692d22773bf40e8733e20329a}} 
+\index{CelebrationDecorator@{CelebrationDecorator}!IsCompleted@{IsCompleted}}
+\index{IsCompleted@{IsCompleted}!CelebrationDecorator@{CelebrationDecorator}}
+\doxysubsubsection{\texorpdfstring{IsCompleted()}{IsCompleted()}}
+{\footnotesize\ttfamily bool Celebration\+Decorator\+::\+Is\+Completed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+returns a boolean on if the movement was completed or not 
+
+\begin{DoxyReturn}{Returns}
+a boolean confirming that the celebration has completed 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIStrategy_a13c6048efd232b696db5f35000d5b106}{I\+Strategy}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classJumpDecorator_a94b32bed5b764df15980356aa8763abe}{Jump\+Decorator}}, and \mbox{\hyperlink{classSpinDecorator_a0887a816731d9ff8ee8161034a03c4aa}{Spin\+Decorator}}.
+
+\mbox{\Hypertarget{classCelebrationDecorator_aaea8fd11f7d0e12dd79ccdc63ab1bbf6}\label{classCelebrationDecorator_aaea8fd11f7d0e12dd79ccdc63ab1bbf6}} 
+\index{CelebrationDecorator@{CelebrationDecorator}!Move@{Move}}
+\index{Move@{Move}!CelebrationDecorator@{CelebrationDecorator}}
+\doxysubsubsection{\texorpdfstring{Move()}{Move()}}
+{\footnotesize\ttfamily void Celebration\+Decorator\+::\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$}]{entity,  }\item[{double}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+moves the entity 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & entity to be moved \\
+\hline
+{\em dt} & distance moved \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIStrategy_a69254389f4ef9a851dc5d40c4cc9aacd}{I\+Strategy}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classJumpDecorator_a6d46675428916bbe6acd10fb25d51f86}{Jump\+Decorator}}, and \mbox{\hyperlink{classSpinDecorator_a766735ae467d0bb3a80169e109951804}{Spin\+Decorator}}.
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/home/balas095/csci-\/3081w-\/f22/lab10/\+Team-\/001-\/4-\/lab10/libs/transit/include/Celebration\+Decorator.\+h\item 
-/home/balas095/csci-\/3081w-\/f22/lab10/\+Team-\/001-\/4-\/lab10/libs/transit/src/Celebration\+Decorator.\+cc\end{DoxyCompactItemize}
+/home/balas095/csci-\/3081w-\/f22/hw4/\+Team-\/001-\/4-\/homework04/libs/transit/include/Celebration\+Decorator.\+h\item 
+/home/balas095/csci-\/3081w-\/f22/hw4/\+Team-\/001-\/4-\/homework04/libs/transit/src/Celebration\+Decorator.\+cc\end{DoxyCompactItemize}

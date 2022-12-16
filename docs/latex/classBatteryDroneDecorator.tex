@@ -1,0 +1,180 @@
+\hypertarget{classBatteryDroneDecorator}{}\doxysection{Battery\+Drone\+Decorator Class Reference}
+\label{classBatteryDroneDecorator}\index{BatteryDroneDecorator@{BatteryDroneDecorator}}
+
+
+Decorator for drone objects that handles drone\textquotesingle{}s battery capabilities.  
+
+
+
+
+{\ttfamily \#include $<$Battery\+Drone\+Decorator.\+h$>$}
+
+
+
+Inheritance diagram for Battery\+Drone\+Decorator\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{classBatteryDroneDecorator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Battery\+Drone\+Decorator\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBatteryDroneDecorator__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBatteryDroneDecorator_a5cb6f5345fdb4180bbca4750193f98f5}\label{classBatteryDroneDecorator_a5cb6f5345fdb4180bbca4750193f98f5}} 
+\mbox{\hyperlink{classBatteryDroneDecorator_a5cb6f5345fdb4180bbca4750193f98f5}{Battery\+Drone\+Decorator}} (\mbox{\hyperlink{classDrone}{Drone}} $\ast$drone)
+\begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{classBatteryDroneDecorator}{Battery\+Drone\+Decorator}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBatteryDroneDecorator_a2578894a934c0b58f80fc2b83647c0d3}\label{classBatteryDroneDecorator_a2578894a934c0b58f80fc2b83647c0d3}} 
+\mbox{\hyperlink{classBatteryDroneDecorator_a2578894a934c0b58f80fc2b83647c0d3}{$\sim$\+Battery\+Drone\+Decorator}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classBatteryDroneDecorator}{Battery\+Drone\+Decorator}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBatteryDroneDecorator_abbbe907d2628c6d0950fdec30f98fa5d}{Update}} (double dt, std\+::vector$<$ \mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ $>$ scheduler, std\+::vector$<$ \mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ $>$ stations)
+\begin{DoxyCompactList}\small\item\em Wrapper for drone update function; accepts new requests, moves drone, etc. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBatteryDroneDecorator_aa67edf47a8c9d9f67e0fec4dd1d6b065}{Get\+Nearest\+Entity}} (std\+::vector$<$ \mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ $>$ scheduler, std\+::vector$<$ \mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ $>$ stations)
+\begin{DoxyCompactList}\small\item\em Wrapper for drone Get\+Nearest\+Entity function. Finds nearest robot entity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBatteryDroneDecorator_a30443491cd98b12c2856f640cf8bc394}{Get\+Nearest\+Recharge\+Station}} (std\+::vector$<$ \mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ $>$ stations)
+\begin{DoxyCompactList}\small\item\em Finds nearest recharge station. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBatteryDroneDecorator_a0eac0f153d5bc8f90c21ef3a47b10d8c}{has\+Enough\+Battery\+For\+Dist}} (float dist)
+\begin{DoxyCompactList}\small\item\em Determines whether drone has enough battery to complete a trip of a certain distance. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBatteryDroneDecorator_a88af1d83ae7aa1f158c8b7284bf3c4b0}{Is\+Battery\+Drone}} () override
+\begin{DoxyCompactList}\small\item\em Determines whether object from which function is called is a battery drone. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBatteryDroneDecorator_a96ce67ce1edeb71df9a7b4706209b3a2}\label{classBatteryDroneDecorator_a96ce67ce1edeb71df9a7b4706209b3a2}} 
+float {\bfseries battery\+Level} = 50.\+0
+\item 
+\mbox{\Hypertarget{classBatteryDroneDecorator_ab4553b3e3bf06326b78115a8d5ee3c17}\label{classBatteryDroneDecorator_ab4553b3e3bf06326b78115a8d5ee3c17}} 
+const float {\bfseries B\+A\+T\+T\+E\+R\+Y\+\_\+\+R\+A\+TE} = 0.\+25
+\item 
+\mbox{\Hypertarget{classBatteryDroneDecorator_a7ebb8748df8d7f818560b03847225ac2}\label{classBatteryDroneDecorator_a7ebb8748df8d7f818560b03847225ac2}} 
+const float {\bfseries B\+A\+T\+T\+E\+R\+Y\+\_\+\+C\+H\+A\+R\+G\+I\+N\+G\+\_\+\+R\+A\+TE} = 10.\+0
+\item 
+\mbox{\Hypertarget{classBatteryDroneDecorator_a6ddff31623757ceb4374b7f644485fb0}\label{classBatteryDroneDecorator_a6ddff31623757ceb4374b7f644485fb0}} 
+const float {\bfseries B\+A\+T\+T\+E\+R\+Y\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+Z\+O\+NE} = 25.\+0
+\item 
+\mbox{\Hypertarget{classBatteryDroneDecorator_a0810f15dd2ba631c4f5e5d829ace6e9b}\label{classBatteryDroneDecorator_a0810f15dd2ba631c4f5e5d829ace6e9b}} 
+\mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ {\bfseries nearest\+Recharge\+Station}
+\item 
+\mbox{\Hypertarget{classBatteryDroneDecorator_a8a5bd4269d7fd1a22f706e18a6de691a}\label{classBatteryDroneDecorator_a8a5bd4269d7fd1a22f706e18a6de691a}} 
+bool {\bfseries on\+Recharge\+Mission} = false
+\item 
+\mbox{\Hypertarget{classBatteryDroneDecorator_a32581b1bbe7633466a56b8c5496526fa}\label{classBatteryDroneDecorator_a32581b1bbe7633466a56b8c5496526fa}} 
+\mbox{\hyperlink{classVector3}{Vector3}} {\bfseries target\+Pos}
+\item 
+\mbox{\Hypertarget{classBatteryDroneDecorator_a787203e7bbf9b941e0336142beb0b3d3}\label{classBatteryDroneDecorator_a787203e7bbf9b941e0336142beb0b3d3}} 
+\mbox{\hyperlink{classIStrategy}{I\+Strategy}} $\ast$ {\bfseries to\+Target\+Pos\+Strategy} = N\+U\+LL
+\item 
+\mbox{\Hypertarget{classBatteryDroneDecorator_aca818b23e67ef07e040c74676c0a5188}\label{classBatteryDroneDecorator_aca818b23e67ef07e040c74676c0a5188}} 
+\mbox{\hyperlink{classIStrategy}{I\+Strategy}} $\ast$ {\bfseries to\+Target\+Dest\+Strategy} = N\+U\+LL
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Decorator for drone objects that handles drone\textquotesingle{}s battery capabilities. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBatteryDroneDecorator_aa67edf47a8c9d9f67e0fec4dd1d6b065}\label{classBatteryDroneDecorator_aa67edf47a8c9d9f67e0fec4dd1d6b065}} 
+\index{BatteryDroneDecorator@{BatteryDroneDecorator}!GetNearestEntity@{GetNearestEntity}}
+\index{GetNearestEntity@{GetNearestEntity}!BatteryDroneDecorator@{BatteryDroneDecorator}}
+\doxysubsubsection{\texorpdfstring{GetNearestEntity()}{GetNearestEntity()}}
+{\footnotesize\ttfamily void Battery\+Drone\+Decorator\+::\+Get\+Nearest\+Entity (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ $>$}]{scheduler,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ $>$}]{stations }\end{DoxyParamCaption})}
+
+
+
+Wrapper for drone Get\+Nearest\+Entity function. Finds nearest robot entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scheduler} & Vector of all robots. \\
+\hline
+{\em stations} & Vector of stations. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBatteryDroneDecorator_a30443491cd98b12c2856f640cf8bc394}\label{classBatteryDroneDecorator_a30443491cd98b12c2856f640cf8bc394}} 
+\index{BatteryDroneDecorator@{BatteryDroneDecorator}!GetNearestRechargeStation@{GetNearestRechargeStation}}
+\index{GetNearestRechargeStation@{GetNearestRechargeStation}!BatteryDroneDecorator@{BatteryDroneDecorator}}
+\doxysubsubsection{\texorpdfstring{GetNearestRechargeStation()}{GetNearestRechargeStation()}}
+{\footnotesize\ttfamily void Battery\+Drone\+Decorator\+::\+Get\+Nearest\+Recharge\+Station (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ $>$}]{stations }\end{DoxyParamCaption})}
+
+
+
+Finds nearest recharge station. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stations} & Vector of all recharge station objects. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBatteryDroneDecorator_a0eac0f153d5bc8f90c21ef3a47b10d8c}\label{classBatteryDroneDecorator_a0eac0f153d5bc8f90c21ef3a47b10d8c}} 
+\index{BatteryDroneDecorator@{BatteryDroneDecorator}!hasEnoughBatteryForDist@{hasEnoughBatteryForDist}}
+\index{hasEnoughBatteryForDist@{hasEnoughBatteryForDist}!BatteryDroneDecorator@{BatteryDroneDecorator}}
+\doxysubsubsection{\texorpdfstring{hasEnoughBatteryForDist()}{hasEnoughBatteryForDist()}}
+{\footnotesize\ttfamily bool Battery\+Drone\+Decorator\+::has\+Enough\+Battery\+For\+Dist (\begin{DoxyParamCaption}\item[{float}]{dist }\end{DoxyParamCaption})}
+
+
+
+Determines whether drone has enough battery to complete a trip of a certain distance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dist} & Trip distance. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if drone has enough battery for the trip; false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBatteryDroneDecorator_a88af1d83ae7aa1f158c8b7284bf3c4b0}\label{classBatteryDroneDecorator_a88af1d83ae7aa1f158c8b7284bf3c4b0}} 
+\index{BatteryDroneDecorator@{BatteryDroneDecorator}!IsBatteryDrone@{IsBatteryDrone}}
+\index{IsBatteryDrone@{IsBatteryDrone}!BatteryDroneDecorator@{BatteryDroneDecorator}}
+\doxysubsubsection{\texorpdfstring{IsBatteryDrone()}{IsBatteryDrone()}}
+{\footnotesize\ttfamily bool Battery\+Drone\+Decorator\+::\+Is\+Battery\+Drone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Determines whether object from which function is called is a battery drone. 
+
+\begin{DoxyReturn}{Returns}
+true 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_a8719dc19a05fbf38550e640a4c15f323}{I\+Entity}}.
+
+\mbox{\Hypertarget{classBatteryDroneDecorator_abbbe907d2628c6d0950fdec30f98fa5d}\label{classBatteryDroneDecorator_abbbe907d2628c6d0950fdec30f98fa5d}} 
+\index{BatteryDroneDecorator@{BatteryDroneDecorator}!Update@{Update}}
+\index{Update@{Update}!BatteryDroneDecorator@{BatteryDroneDecorator}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Battery\+Drone\+Decorator\+::\+Update (\begin{DoxyParamCaption}\item[{double}]{dt,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ $>$}]{scheduler,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ $>$}]{stations }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Wrapper for drone update function; accepts new requests, moves drone, etc. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & Time delta from last update. \\
+\hline
+{\em scheduler} & Vector of all robot objects. \\
+\hline
+{\em stations} & Vector of all recharge station objects. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_ac7c49bc68ba896f4d1cfc372d8b68d92}{I\+Entity}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/balas095/csci-\/3081w-\/f22/hw4/\+Team-\/001-\/4-\/homework04/libs/transit/include/Battery\+Drone\+Decorator.\+h\item 
+/home/balas095/csci-\/3081w-\/f22/hw4/\+Team-\/001-\/4-\/homework04/libs/transit/src/Battery\+Drone\+Decorator.\+cc\end{DoxyCompactItemize}

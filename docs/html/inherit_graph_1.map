@@ -1,6 +1,10 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classIEntity.html" title=" " alt="" coords="5,56,69,83"/>
-<area shape="rect" id="node2" href="$classCreeper.html" title="This class implements IEntity and is responsible for handling the Creeper: an entity that continually..." alt="" coords="117,5,191,32"/>
-<area shape="rect" id="node3" href="$classDrone.html" title=" " alt="" coords="123,56,185,83"/>
-<area shape="rect" id="node4" href="$classRobot.html" title=" " alt="" coords="124,107,184,133"/>
+<area shape="rect" id="node1" href="$classIEntity.html" title="Abstract controller class used in Transit Service." alt="" coords="5,132,69,159"/>
+<area shape="rect" id="node2" href="$classBaseDroneDecorator.html" title="Base Class for Decorator wrappers on drone objects." alt="" coords="117,5,275,32"/>
+<area shape="rect" id="node4" href="$classCar.html" title="this class inhertis from the IEntity class and is responsible for creating functionality for the car ..." alt="" coords="174,56,218,83"/>
+<area shape="rect" id="node5" href="$classDrone.html" title="this class inhertis from the IEntity class and is responsible for creating functionality for the dron..." alt="" coords="165,107,227,133"/>
+<area shape="rect" id="node6" href="$classHelicopter.html" title="this class inhertis from the IEntity class and is responsible for creating functionality for the heli..." alt="" coords="151,157,241,184"/>
+<area shape="rect" id="node7" href="$classRechargeStation.html" title="Represents a RechargeStation in a physical system." alt="" coords="131,208,261,235"/>
+<area shape="rect" id="node8" href="$classRobot.html" title="class used to manage the Robot entity" alt="" coords="166,259,226,285"/>
+<area shape="rect" id="node3" href="$classBatteryDroneDecorator.html" title="Decorator for drone objects that handles drone&#39;s battery capabilities." alt="" coords="323,5,496,32"/>
 </map>

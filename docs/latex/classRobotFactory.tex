@@ -2,6 +2,15 @@
 \label{classRobotFactory}\index{RobotFactory@{RobotFactory}}
 
 
+This class serves as a factory for the \mbox{\hyperlink{classRobot}{Robot}} class.  
+
+
+
+
+{\ttfamily \#include $<$Robot\+Factory.\+h$>$}
+
+
+
 Inheritance diagram for Robot\+Factory\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -21,12 +30,39 @@ Collaboration diagram for Robot\+Factory\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classRobotFactory_ad2ceb080af7357b641332a237ae74959}\label{classRobotFactory_ad2ceb080af7357b641332a237ae74959}} 
-\mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ {\bfseries Create\+Entity} (Json\+Object \&entity)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ \mbox{\hyperlink{classRobotFactory_afc0e1c7a9a85beae5245ae3294465167}{Create\+Entity}} (const Json\+Object \&entity)
+\begin{DoxyCompactList}\small\item\em Creates and returns a new \mbox{\hyperlink{classRobot}{Robot}} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class serves as a factory for the \mbox{\hyperlink{classRobot}{Robot}} class. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRobotFactory_afc0e1c7a9a85beae5245ae3294465167}\label{classRobotFactory_afc0e1c7a9a85beae5245ae3294465167}} 
+\index{RobotFactory@{RobotFactory}!CreateEntity@{CreateEntity}}
+\index{CreateEntity@{CreateEntity}!RobotFactory@{RobotFactory}}
+\doxysubsubsection{\texorpdfstring{CreateEntity()}{CreateEntity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ Robot\+Factory\+::\+Create\+Entity (\begin{DoxyParamCaption}\item[{const Json\+Object \&}]{entity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates and returns a new \mbox{\hyperlink{classRobot}{Robot}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & Json Object containing details for the \mbox{\hyperlink{classRobot}{Robot}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classRobot}{Robot}} object configured as per entity Json Object 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntityFactory_ab28e669d7f78ce426620fa4e472f3adb}{I\+Entity\+Factory}}.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/home/balas095/csci-\/3081w-\/f22/lab10/\+Team-\/001-\/4-\/lab10/libs/transit/include/Robot\+Factory.\+h\item 
-/home/balas095/csci-\/3081w-\/f22/lab10/\+Team-\/001-\/4-\/lab10/libs/transit/src/Robot\+Factory.\+cc\end{DoxyCompactItemize}
+/home/balas095/csci-\/3081w-\/f22/hw4/\+Team-\/001-\/4-\/homework04/libs/transit/include/Robot\+Factory.\+h\item 
+/home/balas095/csci-\/3081w-\/f22/hw4/\+Team-\/001-\/4-\/homework04/libs/transit/src/Robot\+Factory.\+cc\end{DoxyCompactItemize}
