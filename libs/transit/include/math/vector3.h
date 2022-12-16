@@ -67,6 +67,11 @@ class Vector3 {
    */
   Vector3 operator/(float m);
 
+  /**
+   * @brief Overrides [] operator, allowing caller to read and write to index into x, y, z elements
+   * @param[in] index The index of the vector at which the value is desired
+   * @return The value at index; if index is out of bounds, no useful data is returned.
+   */
   float& operator[](int index) {
     if (index == 0) {
       return x;
@@ -82,6 +87,11 @@ class Vector3 {
     return dummyData;
   }
 
+  /**
+   * @brief Overrides [] operator, allowing caller to read to index into x, y, z elements
+   * @param[in] index The index of the vector at which the value is desired
+   * @return The value at index; if index is out of bounds, no useful data is returned.
+   */
   float operator[](int index) const {
     if (index == 0) {
       return x;
@@ -95,10 +105,23 @@ class Vector3 {
     return 0.0;
   }
 
+  /**
+   * @brief Computes and returns the vector's magnitude.
+   * @return The vector's magnitude.
+   */
   float Magnitude() { return std::sqrt(x * x + y * y + z * z); }
 
+  /**
+   * @brief Computes and returns the unit vector.
+   * @return The unit vector.
+   */
   Vector3 Unit() { return (*this) / Magnitude(); }
 
+  /**
+   * @brief Distance to another vector
+   * @param v The vector to which the distance is desired
+   * @return The distance to vector v
+   */
   float Distance(const Vector3& v) {
     return sqrt(pow(v.x - this->x, 2) + pow(v.y - this->y, 2) +
                 pow(v.z - this->z, 2));
@@ -109,6 +132,10 @@ class Vector3 {
    */
   void Print();
 
+  /**
+   * @brief Converts Vector3 object to C++ vector object
+   * @return vector in C++ vector object form
+   */
   std::vector<float> toCppVector() {
     std::vector<float> result;
     result.push_back(x);
