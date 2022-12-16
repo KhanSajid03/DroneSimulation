@@ -4,7 +4,6 @@
 #include "IEntity.h"
 #include "IEntityFactory.h"
 #include "Robot.h"
-
 #include <vector>
 
 /**
@@ -14,7 +13,6 @@ class RobotFactory : public IEntityFactory {
  public:
     /**
      * @brief Creates and returns a new Robot object
-     * 
      * @param entity Json Object containing details for the Robot.
      * @return Robot object configured as per entity Json Object
      */

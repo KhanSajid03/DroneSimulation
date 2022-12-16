@@ -18,7 +18,7 @@ using namespace routing;
  */
 class IEntity {
  public:
-   /**
+  /**
    * @brief Constructor
    */
   IEntity() {
@@ -36,36 +36,36 @@ class IEntity {
    */
   virtual int GetId() const { return id; }
   /**
-   * @brief Getter for Drone position
+   * @brief Getter for entity's position
    * 
-   * @return Vector3 representing Drone position
+   * @return Vector3 representing entity's position
    */
   virtual Vector3 GetPosition() const = 0;
   /**
-   * @brief Getter for Drone direction
+   * @brief Getter for entity's direction
    * 
-   * @return Vector3 representing Drone direction
+   * @return Vector3 representing entity's direction
    */
   virtual Vector3 GetDirection() const = 0;
   /**
-   * @brief Getter for Drone destination
+   * @brief Getter for entity's destination
    * 
-   * @return Vector3 representing Drone destination
+   * @return Vector3 representing entity's destination
    */
   virtual Vector3 GetDestination() const = 0;
   /**
-   * @brief Getter for Drone details Json object
+   * @brief Getter for entity's details Json object
    * 
-   * @return JsonObject representing Drone details
+   * @return JsonObject representing entity's details
    */
   virtual JsonObject GetDetails() const = 0;
   /**
-   * @brief Getter for Drone speed
+   * @brief Getter for entity's speed
    * @return the float speed value
    */
   virtual float GetSpeed() const = 0;
   /**
-   * @brief Getter for Entity availability attribute
+   * @brief Getter for entity availability attribute
    * 
    * @return bool representing Entity availability
    */
@@ -79,7 +79,7 @@ class IEntity {
   /**
    * @brief Setter for strategy availability
    * 
-   * @param bool
+   * @param choice bool representing drone's availability
    */
   virtual void SetAvailability(bool choice) {}
   /**
@@ -107,13 +107,13 @@ class IEntity {
    * @param pos__ vector3 representing new position
    */
   virtual void SetPosition(Vector3 pos_) {}
-   /**
+  /**
    * @brief Setter for Entity direction
    * 
    * @param dir__ vector3 representing new direction
    */
   virtual void SetDirection(Vector3 dir_) {}
-    /**
+  /**
    * @brief Setter for Entity destination
    * 
    * @param des__ vector3 representing new destination

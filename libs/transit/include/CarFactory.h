@@ -13,10 +13,9 @@
 class CarFactory : public IEntityFactory {
  public:
     /**
-    * 
-    * @brief virtual destructor
-    * 
-    */
+     * @brief virtual destructor
+     * 
+     */
     virtual ~CarFactory() {}
     /**
      * @brief Creates and returns a new car object

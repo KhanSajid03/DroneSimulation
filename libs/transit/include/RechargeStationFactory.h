@@ -13,15 +13,11 @@
 class RechargeStationFactory : public IEntityFactory {
  public:
     /**
-    * 
-    * virtual destructor
-    * 
+    * @brief virtual destructor
     */
     virtual ~RechargeStationFactory() {}
-
     /**
      * Creates and returns a new RechargeStation object
-     * 
      * @param entity Json Object containing details for the RechargeStation.
      * @return RechargeStation object configured as per entity Json Object
      */
