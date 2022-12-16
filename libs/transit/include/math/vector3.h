@@ -5,7 +5,7 @@
 #include <iostream>
 #include <vector>
 
-// TODO: docuent new constructor/function
+
 
 /// @brief A class built solely to handle 3D vector mathematics.
 class Vector3 {

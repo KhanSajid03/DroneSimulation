@@ -1,18 +1,40 @@
-#ifndef CELEBRATION_DECORATOR_H_
-#define CELEBRATION_DECORATOR_H_
+#ifndef LIBS_TRANSIT_INCLUDE_CELEBRATIONDECORATOR_H_
+#define LIBS_TRANSIT_INCLUDE_CELEBRATIONDECORATOR_H_
 
 #include <vector>
 
 #include "IStrategy.h"
-
+/**
+ * @brief This class serves as a decorator for the varous celebrations
+ */
 class CelebrationDecorator : public IStrategy {
  public:
+  /**
+   * @brief Construct a new Celebration Decorator object
+   * 
+   * @param strategy used
+   */
   CelebrationDecorator(IStrategy *strategy_) {
     strategy = strategy_;
     time = 0;
   }
+  /**
+   * @brief moves the entity
+   * 
+   * @param entity entity to be moved
+   * @param dt distance moved
+   */
   void Move(IEntity *entity, double dt);
-  std::vector<std::vector<float>> GetPath() override { return strategy->GetPath(); }
+  /**
+   * @brief Gets the path of the strategy
+   * @return a vector of floats
+   */
+  std::vector<std::vector<float>> GetPath()
+  override { return strategy->GetPath(); }
+  /**
+   * @brief returns a boolean on if the movement was completed or not
+   * @return a boolean confirming that the celebration has completed
+   */
   bool IsCompleted();
 
  protected:
@@ -20,7 +42,4 @@ class CelebrationDecorator : public IStrategy {
   float time;
 };  // close class
 
-#endif  // CELEBRATION_DECORATOR_H_
-
-
-// TODO: do we need destructor?
+#endif  // LIBS_TRANSIT_INCLUDE_CELEBRATIONDECORATOR_H_
