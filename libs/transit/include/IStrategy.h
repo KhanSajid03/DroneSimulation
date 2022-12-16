@@ -1,21 +1,35 @@
-#ifndef ISTRATEGY_H_
-#define ISTRATEGY_H_
+#ifndef LIBS_TRANSIT_INCLUDE_ISTRATEGY_H_
+#define LIBS_TRANSIT_INCLUDE_ISTRATEGY_H_
 
 #include <vector>
 #include "graph.h"
 #include "IEntity.h"
 
 using namespace routing;
-
+/**
+ * @brief class used to manage the various strategies
+ */
 class IStrategy {
-    public:
+ public:
+        /**
+         * @brief move funtion for the strategies
+         * @param entity to be moved
+         * @param dt time variable
+         */
         virtual void Move(IEntity* entity, double dt) = 0;
+        /**
+         * @brief check if the movement is completed or not
+         * @return bool value
+         */
         virtual bool IsCompleted() = 0;
+        /**
+         * @brief getting the paths of the points
+         * @return a vector of floats containing the paths
+         */
         virtual std::vector<std::vector<float>> GetPath() { return path; }
-    protected:
-        // IGraph object to be used in the simulation.
+ protected:
         std::vector<std::vector<float>> path;
         const IGraph* graph;
-}; //close class 
+};
 
-#endif // ISTRATEGY_H_
+#endif  // LIBS_TRANSIT_INCLUDE_ISTRATEGY_H_

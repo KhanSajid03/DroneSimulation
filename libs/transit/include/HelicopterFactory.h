@@ -1,5 +1,5 @@
-#ifndef HELICOPTER_FACTORY_H_
-#define HELICOPTER_FACTORY_H_
+#ifndef LIBS_TRANSIT_INCLUDE_HELICOPTERFACTORY_H_
+#define LIBS_TRANSIT_INCLUDE_HELICOPTERFACTORY_H_
 
 #include "IEntity.h"
 #include "IEntityFactory.h"
@@ -8,19 +8,19 @@
 #include <vector>
 
 /**
- * @brief This class serves as a factory for the Car class
+ * @brief This class serves as a factory for the Helicopter class
  */
 class HelicopterFactory : public IEntityFactory {
  public:
     /**
     * 
-    * virtual destructor
+    * @brief virtual destructor
     * 
     */
     virtual ~HelicopterFactory() {}
 
     /**
-     * Creates and returns a new helicopter object
+     * @brief Creates and returns a new helicopter object
      * 
      * @param entity Json Object containing details for the helicopter.
      * @return helicopter object configured as per entity Json Object
@@ -28,4 +28,4 @@ class HelicopterFactory : public IEntityFactory {
     IEntity* CreateEntity(JsonObject& entity);
 };
 
-#endif
+#endif  // LIBS_TRANSIT_INCLUDE_HELICOPTERFACTORY_H_

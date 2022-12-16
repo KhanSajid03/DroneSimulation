@@ -60,20 +60,20 @@ class Car : public IEntity {
   /**
    * @brief Getter for car availability attribute
    * 
-   * @return JsonObject representing car availability
+   * @return bool representing car availability
    */
   bool GetAvailability() const { return available; }
   /**
    * @brief Get the nearest entity from list of entity objects
    * 
-   * @param entities list of entity objects
+   * @param scheduler list of entity objects
    */
   void GetNearestEntity(std::vector<IEntity*> scheduler);
 
   /**
    * @brief Updates the entity
-   * 
-   * @param entities list of entity objects
+   * @param dt time variable
+   * @param scheduler list of entity objects
    */
   void Update(double dt, std::vector<IEntity*> scheduler);
 
