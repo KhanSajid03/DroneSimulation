@@ -1,5 +1,5 @@
-#ifndef SIMULATION_MODEL_H_
-#define SIMULATION_MODEL_H_
+#ifndef LIBS_TRANSIT_INCLUDE_SIMULATIONMODEL_H_
+#define LIBS_TRANSIT_INCLUDE_SIMULATIONMODEL_H_
 
 #include "IController.h"
 #include "CompositeFactory.h"
@@ -11,22 +11,40 @@ using namespace routing;
 
 /// Simulation Model handling the transit simulation.  The model can communicate
 /// with the controller.
+/**
+ * @brief This class handles the transit simulation
+ */
 class SimulationModel {
  public:
+  /**
+   * @brief constructor
+   * @param controller
+   */
   SimulationModel(IController& controller);
-
+  /**
+   * @brief Initializes the graph
+   * @param graph to be initialized
+   */
   void SetGraph(const IGraph* graph) { this->graph = graph; }
-
-  /// Creates an simulation entity
+  /**
+   * @brief Creates an simulation entity
+   * @param entity
+   */
   void CreateEntity(JsonObject& entity);
-
-  /// Schedules a trip for an object in the scene
+  /**
+   * @brief Schedules a trip for an object in the scene
+   * @param details
+   */
   void ScheduleTrip(JsonObject& details);
-
-  /// Updates the simulation
+  /**
+   * @brief Updates the simulation
+   * @param dt
+   */
   void Update(double dt);
-
-  // Adds a new entity type
+  /**
+   * @brief Adds a new entity type
+   * @param factory
+   */
   void AddFactory(IEntityFactory* factory);
 
  protected:
@@ -38,4 +56,4 @@ class SimulationModel {
   CompositeFactory* compFactory;
 };
 
-#endif
+#endif  // LIBS_TRANSIT_INCLUDE_SIMULATIONMODEL_H_
