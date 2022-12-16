@@ -20,6 +20,7 @@ class SimulationModel {
    * @brief constructor
    * @param controller Controller
    */
+  // controller cannot be constant--leads to errors if made constant
   SimulationModel(IController& controller);
   /**
    * @brief Initializes the graph
