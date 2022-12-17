@@ -73,4 +73,4 @@ This new feature does not require any user interactions. This new feature can be
 The sprint was a good addition to the workflow for this project. Splitting up the work was successful at the beginning. After a while, the group lost some direction because of integration issues where code written by different people does not work well together. The next time this group uses the AGILE workflow, more paired programming should be used. Pair programming would alleviate some of the integration issues because when code is pushed there will be more than one person who understands how it works, thus making integration much easier later.
 
 # UML
-https://drive.google.com/drive/folders/1YNCaJ6ONPimGcTYO07v3-LnXOVAxTLrB
+https://drive.google.com/file/d/105UEHd6nAE0Z1OkzL4gaZBEs57_rDnjO/view?usp=sharing
