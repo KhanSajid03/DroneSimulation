@@ -1,9 +1,9 @@
 # Project 4 - Team 4
 
-Team Members:
-Sajid Khan - Khan0680
-Madhan Mohan - Mohan130
-Dhruv Balasubramanian - Balas095
+Team Members:  
+Sajid Khan - Khan0680 | 
+Madhan Mohan - Mohan130 | 
+Dhruv Balasubramanian - Balas095 | 
 Apekshik Panigrahi - Panig013
 
 YouTube video for our Project: 
