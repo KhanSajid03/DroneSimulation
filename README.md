@@ -22,11 +22,11 @@ First make sure your machine has Docker installed.
 
 To pull down the mohan130-homework4 image run:
 
-docker pull mohan130-homework4
+`docker pull mohan130/mohan130-homework4`
 
 To run the container with the new image run:
 
-docker run -it --rm -p 8081:8081 mohan130-homework4
+`docker run -it --rm -p 8081:8081 mohan130/mohan130-homework4`
 
 Navigate to http://localhost:8081/schedule.html to view your simulation, and http://localhost:8081/schedule.html to schedule a trip.
 
@@ -36,17 +36,18 @@ Or you could just clone this project from GitHub with this link
 
 Once the project is cloned, 
 
-“cd /path/to/repo/project”
+`cd /path/to/repo/project`
 
 and once you are in the project directory, build the project with
 
-“make -j”
+`make -j`
 
 and once the code correctly compiles and builds, run it with
 
-“./build/bin/transit_service 8081 apps/transit_service/web/”
+`./build/bin/transit_service 8081 apps/transit_service/web/`
 
 to see the running project open up a browser and go to “localhost:8081” to see the simulation. To schedule trips and interact with the simulation go to “localhost:8081/schedule.html” to be able to schedule trips for the simulation to visualize.
+
 
 ## What the simulation does
 This simulation contains multiple entities, such as cars, drones, helicopters, robots, and recharge stations. The user can interact with this simulation by scheduling trips which will create a robot that will be picked up and transported by the drone, and also by adding helicopters that will fly randomly throughout the map.
